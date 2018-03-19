@@ -1,7 +1,10 @@
-/* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700');
+
+/*		-----FONTS-----		*/
+
+
 * {
 	box-sizing: border-box;
 }
@@ -35,6 +38,7 @@ body {
 	line-height: 1;
 	font-size: 3vw;
 	background-color: #FFF9E9;
+	font-family: 'Montserrat', sans-serif;
 }
 ol, ul {
 	list-style: none;
@@ -71,7 +75,7 @@ a{
   }
   header nav ul li{
     float: left;
-    background-color:rgb(241,196,15) ;
+    background-color:rgb(241,196,15);
     margin-right: 6vw;
     border-radius: 5px;
     box-shadow: 2px 2px 5px #3e5b5b;
@@ -79,12 +83,19 @@ a{
   header nav ul li a{
     display: block;
     font-size:3vh;
-    font-family: verdana;
+    
     color: white;
     padding: 1vh 2vw;
     text-align: center;
     line-height: 2em;
+    text-transform: uppercase;
+    box-shadow: 0 0 20px 1px rgba(0,0,0,0.4);
   }
+
+	header nav ul li a:hover {
+		text-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+	}
+
   .search{
     background-image:url(../images/cityBackground.jpg);
     display: block;
@@ -111,7 +122,7 @@ a{
     -ms-user-select: none;
     user-select: none;
     color: white;
-    font-family: verdana;
+    
     font-weight: bold;
     margin-left: 13vw;
     margin-right: 13vw;
@@ -176,9 +187,11 @@ a{
     padding: 1%;
 		font-size: 3vh;
     box-shadow: 2px 2px 5px #3e5b5b;
-    font-weight: bold;
-    color:rgb(241,196,15);
+    font-weight: light;
+    color:#777;
 		margin-left: 10vw;
+		font-family: 'Montserrat', sans-serif;
+
   }
   .keyWoldsSearch button{
 		flex-basis: 10%;
@@ -199,7 +212,7 @@ a{
 	}
   .buscAvanz a{
     color: white;
-		font-family: verdana;
+		
     line-height: 5vw;
     text-align: center;
     font-size: 3vh;
@@ -220,8 +233,6 @@ a{
 		justify-content: center;
 	}
 	.porQue h2{
-		font-family: verdana;
-		text-shadow: 2px 2px 5px #3e5b5b;
 		font-size: 6vh;
 		text-align: center;
 	}
@@ -246,17 +257,15 @@ a{
 	}
 	.caso1 p{
 		margin-top: 5%;
-		font-family: verdana;
+		
 		text-align: center;
-		text-shadow: 2px 2px 5px #3e5b5b;
 		font-size: 3vh;
 		width: 49vw;
 	}
 	.caso2 p{
 		margin-top: 5%;
-		font-family: verdana;
+		
 		text-align: center;
-		text-shadow: 2px 2px 5px #3e5b5b;
 		font-size: 3vh;
 		width: 49vw;
 	}
@@ -268,6 +277,7 @@ a{
 		height: 45vh;
 		justify-content: center;
 		align-items: center;
+		box-shadow: 0 0 20px 2px rgba(0,0,0,0.4);
 	}
 	.image1 img{
 		padding: 8%;
@@ -281,6 +291,7 @@ a{
 		height: 45vh;
 		justify-content: center;
 		align-items: center;
+		box-shadow: 0 0 20px 2px rgba(0,0,0,0.4);
 	}
 	.image2 img{
 		padding: 8%;
@@ -319,9 +330,13 @@ a{
 		text-align: center;
 	}
 	.linksPie a{
-		font-family: verdana;
+		
 		font-size: 1.2em;
 		color: #cccccc;
+	}
+
+	.linksPie a:hover {
+		color: #fff;
 	}
 	.linksPie li:first-child{
 		margin-top: 0;
@@ -341,10 +356,10 @@ a{
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		box-shadow: 2px 2px 5px #3e5b5b;
+		box-shadow: 0 0 20px 2px rgba(0,0,0,0.4);
 		border-radius: 5px;
-		background-color: rgb(241,196,15);
-		font-family: verdana;
+		background-color: #eee;
+		
 		font-size: 2vh;
 		color: rgb(200,45,29);
 		font-weight: bold;
@@ -356,6 +371,7 @@ a{
 		text-align: center;
 		font-weight: bold;
 		margin: 2vh 0 2vh 0;
+		color: black;
 	}
 	.formLogin{
 		display: flex;
@@ -368,6 +384,8 @@ a{
 	}
 	.formLogin label{
 		margin:1vh 0 1vh 0;
+		font-weight: normal;
+		color: #333;
 	}
 	.login a{
 		display: block;
@@ -378,9 +396,11 @@ a{
 		display: block;
 		color: #580505;
 		background-color: #FFFFC2;
-		border-radius: 7px;
+		border-radius: 4px;
 		border-style: none;
 		box-shadow: 1px 2px 18px #888888;
+		padding: 5px 10px;
+		margin: 15px;
 	}
 	.navegacion header{
 		display: flex;
@@ -416,10 +436,10 @@ a{
 			flex-direction: column;
 			align-items: center;
 			justify-content: center;
-			box-shadow: 2px 2px 5px #3e5b5b;
+			box-shadow: 0 0 20px 2px rgba(0,0,0,0.4);
 			border-radius: 5px;
-			background-color: rgb(241,196,15);
-			font-family: verdana;
+			background-color: #eee;
+			
 			font-size: 2vh;
 			color: rgb(200,45,29);
 			font-weight: bold;
@@ -431,6 +451,7 @@ a{
 			text-align: center;
 			font-weight: bold;
 			margin: 2vh 0 2vh 0;
+			color: black;
 		}
 		.formLogin{
 			display: flex;
@@ -448,6 +469,8 @@ a{
 			border-radius: 7px;
 			border-style: none;
 			box-shadow: 1px 2px 18px #888888;
+			padding: 5px 10px;
+			margin: 15px;
 		}
 		/*-----FAQ-----*/
 		.preguntas{
@@ -460,10 +483,10 @@ a{
 			flex-direction: column;
 			align-items: center;
 			justify-content: center;
-			box-shadow: 2px 2px 5px #3e5b5b;
+			box-shadow: 0 0 20px 2px rgba(0,0,0,0.4);
 			border-radius: 5px;
-			background-color: rgb(241,196,15);
-			font-family: verdana;
+			background-color: #eee;
+			
 			font-size: 1em;
 			color: rgb(200,45,29);
 			padding: 2%;
@@ -473,6 +496,7 @@ a{
 			font-weight: bold;
 			font-size: 1.5em;
 			margin-top: 2vh;
+			color: black;
 		}
 		.preguntas h2{
 			text-align: center;
@@ -480,9 +504,13 @@ a{
 			font-style: italic;
 			font-size: 1.3em;
 			margin: 2vh 0 2vh 0;
+			color: black;
+			background-color:rgb(241,196,15);
+			padding: 5px;
 		}
 		.preguntas p{
 			margin: 1%;
+			color: #333;
 		}
 }
 @media (min-width:992px){
@@ -514,7 +542,7 @@ a{
 
 	}
 	.linksPie a{
-		font-family: verdana;
+		
 		font-size: 2vh;
 		color: #cccccc;
 	}

@@ -1,90 +1,94 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/styles.css">
-    <title>Avecino</title>
-  </head>
-  <body>
-    <div class="container">
-      <header>
-        <h3><a href="#"><img src="./images/logo.png" alt="Logo">  </a></h3>
-        <nav>
-          <ul>
-            <li><a href="login.html">INGRESAR</a></li>
-          </ul>
-        </nav>
-      </header>
-      <div class="search">
-        <form class="formSearch" action="search.php" method="get">
-          <div class="comprarAlquilar">
-            <label class="filtro">COMPRAR
-              <input type="radio" checked="checked" name="radio">
-              <span class="checkmark"></span>
-            </label>
-            <label class="filtro">ALQUILAR
-              <input type="radio" name="radio">
-              <span class="checkmark"></span>
-            </label>
-          </div>
-          <div class="keyWoldsSearch">
-            <input type="search" name="palabrasClave" onfocus="this.value=''" value="Palabra clave">
-            <button type="submit" name="enviarConsulta">🔍</button>
-          </div>
-          <div class="buscAvanz">
-            <a href="#">BUSQUEDA AVANZADA</a>
-          </div>
-        </form>
-      </div>
-      <div class="descrip">
-        <div class="porQue">
-          <h2>¿Por qué Avecino?</h2>
-        </div>
-        <div class="casos">
-          <div class="caso1">
-            <div class="image1">
-              <img src="./images/properties.png" alt="Dibujo Propiedades">
-            </div>
-            <p>Contamos con miles de bases de datos para que encuentres
-            tu casa ideal</p>
-          </div>
-          <div class="caso2">
-            <div class="image2">
-              <img src="./images/payment.png" alt="Dibujo Pago">
-            </div>
-            <p>Administrá los servicios de tu casa en un solo
-            lugar sin perder el tiempo</p>
-          </div>
-          <div class="caso1">
-            <div class="image1">
-              <img src="./images/vecinos.png" alt="Dibujo vecinos">
-            </div>
-            <p>Comunicate con tus vecinos de
-              una forma más fácil y rápida</p>
-          </div>
-          <div class="caso2">
-            <div class="image2">
-              <img src="./images/transfer.png" alt="Dibujo Transfer">
-            </div>
-            <p>Recibí los pagos de tus propiedades desde la
-            comodidad de tu casa</p>
-          </div>
-        </div>
-      <div class="anteojos">
-      </div>
-      <div class="pie">
-          <img src="./images/logo.png" alt="logo">
-          <div class="linksPie">
-              <ul>
-                <li><a href="login.html">Ingresar</a></li>
-                <li><a href="registration.html">Registrarse</a></li>
-                <li><a href="index.html">Busqueda</a></li>
-                <li><a href="faq.html">FAQ</a></li>
-                <li><a href="mailto:lautarogonzalez@outlook.com?Subject=Hola-Avecino">Contactar</a></li>
-              </ul>
-          </div>
-      </div>
-    </div>
-  </body>
+<head>
+	<title>Avecino</title>
+	
+	<!-- Metas -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- Scripts -->
+	<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+
+	<!-- Styles -->
+	<link rel="stylesheet" href="css/pruebaStyles.css">
+</head>
+<body>
+	<div class="container">
+		
+
+		<!-- HEADER -->
+		<header>
+			<div class="logo">LOGO</div>
+			<a href="login.html"><button id="login-btn">Ingresar</button></a>
+		</header>
+		<!-- HEADER END -->
+		
+
+
+		<!-- BANNER -->
+		<div id="banner">
+			<form method="GET">
+				<div class="line searchOptions">
+					<input type="radio" name="searchOption" value="COMPRAR">COMPRAR
+					<input type="radio" name="searchOption" value="ALQUILAR">ALQUILAR
+				</div>
+				<div class="line search">
+					<input type="text" name="search" placeholder="Palabras clave">
+					<button class="lupa" type="submit" name="submit"><i class="fas fa-search"></i></button>			
+				</div>
+				<div class="line"><a href=""><button class="busquedaAvanzada">Busqueda avanzada</button></a></div>
+			</form>
+		</div>		
+		<!-- BANNER END -->
+
+
+
+
+		<!-- CONTENT -->
+		<div id="content">
+			<h1>¿Por qué Avecino?</h1>
+			<ul>
+				<li>
+					<div class="circle redOne"><img src="./images/properties.png"></div>
+					<p>Contamos con miles de bases de datos para que encuentres tu casa ideal</p>
+				</li>
+				<li>
+					<div class="circle yellowOne"><img src="./images/payment.png"></div>
+					<p>Administra los servicios de tu casa en un solo lugar sin perder tiempo</p>
+				</li>
+				<li>
+					<div class="circle redOne"><img src="./images/vecinos.png"></div>
+					<p>Comunicate con tus vecinos de una forma mas fácil y rápida</p>
+				</li>
+				<li>
+					<div class="circle yellowOne"><img src="./images/transfer.png"></div>
+					<p>Recibi los pagos de tus propiedades desde la comodidad de tu casa</p>
+				</li>
+			</ul>
+		</div>
+		<!-- CONTENT END -->
+
+
+
+
+		<!-- FOOTER -->
+		<div id="footer">
+			<div id="parallax"></div>
+
+			<div id="footer-board">
+				<div class="logo">LOGO</div>
+				<ul>
+					<li><a href="login.html">Ingresar</a></li>
+					<li><a href="register.html">Registrarse</a></li>
+					<li><a href="#">Busqueda Avanzada</a></li>
+					<li><a href="faq.html">FAQ</a></li>
+					<li><a href="#">Contactar</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- FOOTER END -->
+
+	</div>
+</body>
 </html>

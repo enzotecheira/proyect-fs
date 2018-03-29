@@ -1,0 +1,991 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700');
+
+/*		-----FONTS-----		*/
+
+/*---------------RESETS---------------*/
+	* {
+		box-sizing: border-box;
+	}
+
+	html, body, div, span, applet, object, iframe,
+	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+	a, abbr, acronym, address, big, cite, code,
+	del, dfn, em, img, ins, kbd, q, s, samp,
+	small, strike, strong, sub, sup, tt, var,
+	b, u, i, center,
+	dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td,
+	article, aside, canvas, details, embed,
+	figure, figcaption, footer, header, hgroup,
+	menu, nav, output, ruby, section, summary,
+	time, mark, audio, video {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline;
+	}
+	/* HTML5 display-role reset for older browsers */
+	article, aside, details, figcaption, figure,
+	footer, header, hgroup, menu, nav, section {
+		display: block;
+	}
+	body {
+		line-height: 1;
+		font-size: 3vw;
+		background-color: #FFF9E9;
+		font-family: 'Montserrat', sans-serif;
+	}
+	ol, ul {
+		list-style: none;
+	}
+	blockquote, q {
+		quotes: none;
+	}
+	blockquote:before, blockquote:after,
+	q:before, q:after {
+		content: '';
+		content: none;
+	}
+	table {
+		border-collapse: collapse;
+		border-spacing: 0;
+	}
+	a{
+	  text-decoration: none;
+	  color: black;
+	}
+/*-------------FIN RESETS-------------*/
+
+
+/*--INDEX--*/
+	/*HEADER*/
+		header {
+			background-color: #e74c3c;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 10px 0;
+			height: 12vh;
+		}
+
+		header .logo {
+			border: solid 3px black;
+			padding: 5px 10px;
+			margin-left: 10px;
+			font-size: 2em;
+		}
+
+		header a button {
+		    background-color: #f1c40f;
+		    color: white;
+		    padding: 5px 10px;
+		    box-shadow: 0 0 20px 1px rgba(0,0,0,0.4);
+		    border-radius: 5px;
+		    border: none;
+		    margin-right: 10px;
+			
+			font-family: 'Montserrat', sans-serif;
+		    font-size:2em;
+		    text-align: center;
+		    text-transform: uppercase;
+		}
+		header a {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	/*FIN HEADER*/
+
+	/*BANNER*/
+		#banner {
+			height: 88vh;
+			background-image: url(../images/cityBackground.jpg);
+			background-position: center;
+			background-size: cover;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		#banner form {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+		#banner form .line {
+			margin: 10px 0;
+		}
+		#banner form .searchOptions {
+			font-size: 2em;
+			font-weight: bold;
+			color: white;
+			text-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+		}
+		#banner form .search {
+			display: flex;
+			align-items: center;
+		}
+		#banner form .search input{
+			width: 270px;
+			height: 50px;
+			border: none;
+			border-radius: 8px 0 0 8px;
+			padding: 0 10px;
+
+			font-family: 'Montserrat', sans-serif;
+			font-size: 2.5em;
+		}
+		#banner form .lupa {
+			background-color: #f1c40f;
+			height: 50px;
+			border: none;
+			border-radius: 0 8px 8px 0;
+			padding: 0 10px;
+			
+			font-size: 2em;
+			color: white;
+		}
+		#banner form .busquedaAvanzada {
+			background-color: #f1c40f;
+		    color: white;
+		    padding: 5px 10px;
+		    box-shadow: 0 0 20px 1px rgba(0,0,0,0.4);
+		    border-radius: 5px;
+		    border: none;
+			
+			font-family: 'Montserrat', sans-serif;
+		    font-size:1.3em;
+		    text-align: center;
+		}
+	/*FIN BANNER*/
+
+	/*CONTENT*/
+		#content h1 {
+			font-size: 3em;
+			font-weight: bold;
+			text-align: center;
+			margin: 50px 0;
+		}
+		#content ul li {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			margin: 150px 0;
+		}
+			/*#content ul li:first-child {
+				margin-top: 0; 
+			}
+			#content ul li:last-child {
+				margin-bottom: 0; 
+			}*/
+		#content .circle {
+			width: 200px;
+			height: 200px;
+			border-radius: 100px;
+			margin-bottom: 10px;
+			box-shadow: 0 0 20px 2px rgba(0,0,0,0.4);
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		#content .redOne {
+			background-color: #e74c3c;
+		}
+		#content .yellowOne {
+			background-color: #f1c40f;
+		}
+		#content .circle img {
+			width: 60%;
+		}
+		#content ul li p {
+			font-size: 2.5em;
+			text-align: center;
+			margin: 0 20px;
+		}
+	/*FIN CONTENT*/
+
+	/*FOOTER*/
+		#footer #parallax {
+			width: 100%;
+			height: 300px;
+			background-image: url(../images/city-glasses.jpg);
+			background-attachment: fixed;
+			background-size: cover;
+			background-position: center;
+		}
+		#footer #footer-board {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+
+			padding: 15px 0;
+			background-color: #666;
+		}
+		#footer #footer-board .logo {
+			color: white;
+			border: solid 3px #fff;
+			padding: 5px 10px;
+			font-size: 3em;
+			margin-bottom: 30px;
+		}
+		#footer #footer-board ul {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+		#footer #footer-board ul li {
+			text-align: center;
+			margin: 5px 0;
+			
+		}
+		#footer #footer-board ul li a {
+			font-size: 2em;
+			color: white;
+		}
+		#footer #footer-board ul li a:hover {
+			text-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+		}
+	/*FIN FOOTER*/
+/*--INDEX END*/
+
+/*--REGISTER--*/
+	.containerReg {
+		background-image: url(../images/cityLogin.jpg);
+		background-size: cover;
+		background-position: center; 
+	}
+	.transparent {
+		background-color: rgba(0,0,0,0.5);
+		height: 150vh;
+		z-index: 1;
+	}
+	.registro {
+		width: 300px;
+		border-radius: 10px;
+		margin: 0 auto;
+		box-shadow: 0 0 15px 1px rgba(0,0,0,0.6);
+		padding: 20px 0;
+		margin: 40px auto;
+		background-color: #fff;
+		display: flex;
+		align-items: center;
+	}
+	.registro h1 {
+		font-size: 4em;
+		text-decoration: underline;
+		font-weight: bold;
+		margin-bottom: 20px;
+	}
+	.registro form {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.registro form input {
+		width: 80%;
+		height: 30px;
+		padding: 2px;
+		margin: 8px 0;
+		text-align: center;
+		border: none;
+		border-bottom: 1px solid #999;
+		outline: none;
+		
+		font-family: 'Montserrat', sans-serif;
+		font-size: 1.5em;
+	}
+	.registro form input:hover {
+		box-shadow: 0px 1.5px 0px -1px #3498db;
+	}
+	.registro form label {
+		font-size: 1.5em;
+	}
+
+	.registro form button {
+		width: 80%;
+		padding: 5px 10px;
+		background-color: #e74c3c;
+		border: none;
+		box-shadow: 2px 2px 2px #111;
+		margin: 10px 0;
+		margin-top: 35px;
+		
+		font-weight: bold;
+		font-size: 1.8em;
+		text-shadow: 1px 1px rgba(0,0,0,0.4);
+		color: white;
+	}
+	.registro form button:hover {
+		background-color: #34afff;
+	}
+
+	.login-btn {
+		width: 100px;
+		background-color: #f39c12;
+		border: none;
+		padding: 5px 10px;
+		margin-top: 10px;
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		box-shadow: 2px 2px 2px #111;
+	}
+	.login-btn:active {
+		box-shadow: 1px 1px 1px #000;
+	}
+
+	a .login-btn {
+		color: white;
+		text-decoration: none;
+		font-weight: bold;
+		text-shadow: 1px 1px rgba(0,0,0,0.4);
+	}
+
+	/*form button:hover {
+		background-color: #2980b9;
+	}*/
+
+	form button:active {
+		box-shadow: 1px 1px 1px #000;
+	}
+/*--REGISTER END--*/
+
+/*--LOGIN--*/
+	.containerLog {
+		background-image: url(../images/cityLogin.jpg);
+		background-size: cover;
+		background-position: center; 
+	}
+	.transparentLog {
+		background-color: rgba(0,0,0,0.5);
+		height: 110vh;
+		z-index: 1;
+	}
+	.login {
+		width: 300px;
+		border-radius: 10px;
+		margin: 0 auto;
+		box-shadow: 0 0 15px 1px rgba(0,0,0,0.6);
+		padding: 20px 0;
+		margin: 40px auto 10px auto;
+		background-color: #fff;
+	}
+	.login h1 {
+		font-size: 4em;
+		text-decoration: underline;
+		font-weight: bold;
+		margin-bottom: 20px;
+	}
+	.login form {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.login form input {
+		width: 80%;
+		height: 30px;
+		padding: 2px;
+		margin: 8px 0;
+		text-align: center;
+		border: none;
+		border-bottom: 1px solid #999;
+		outline: none;
+		
+		font-family: 'Montserrat', sans-serif;
+		font-size: 1.5em;
+	}
+	.login form input:hover {
+		box-shadow: 0px 1.5px 0px -1px #3498db;
+	}
+	.login form label {
+		font-size: 1.5em;
+	}
+
+	.login form button {
+		width: 80%;
+		padding: 5px 10px;
+		background-color: #e74c3c;
+		border: none;
+		box-shadow: 2px 2px 2px #111;
+		margin: 10px 0;
+		margin-top: 35px;
+		
+		font-weight: bold;
+		font-size: 1.8em;
+		text-shadow: 1px 1px rgba(0,0,0,0.4);
+		color: white;
+	}
+	.login form button:hover {
+		background-color: #34afff;
+	}
+
+	.login-btn {
+		width: 100px;
+		background-color: #f39c12;
+		border: none;
+		padding: 5px 10px;
+		margin-top: 10px;
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		box-shadow: 2px 2px 2px #111;
+	}
+	.login-btn:hover {
+		background-color: #f1c40f;
+	}
+	.login-btn:active {
+		box-shadow: 1px 1px 1px #000;
+	}
+
+	a .login-btn {
+		color: white;
+		text-decoration: none;
+		font-weight: bold;
+		text-shadow: 1px 1px rgba(0,0,0,0.4);
+	}
+	form button:active {
+		box-shadow: 1px 1px 1px #000;
+	}
+	.containerLog p {
+		font-size: 1.5em;
+		text-align: center;
+		color: white;
+
+		margin-bottom: 40px;
+	}
+	.containerLog p a {
+		color: white;
+	}
+	.containerLog p a:hover {
+		color: blue;
+	}
+	/*FOOTER*/
+		#footer #parallax {
+			width: 100%;
+			height: 300px;
+			background-image: url(../images/city-glasses.jpg);
+			background-attachment: fixed;
+			background-size: cover;
+			background-position: center;
+		}
+		#footer #footerLog-board {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+
+			padding: 15px 0;
+			background-color: #666;
+		}
+		#footer #footerLog-board .logo {
+			color: white;
+			border: solid 3px #fff;
+			padding: 5px 10px;
+			font-size: 3em;
+			margin-bottom: 30px;
+		}
+		#footer #footerLog-board ul {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+		#footer #footerLog-board ul li {
+			text-align: center;
+			margin: 5px 0;
+			
+		}
+		#footer #footerLog-board ul li a {
+			font-size: 2em;
+			color: white;
+		}
+		#footer #footerLog-board ul li a:hover {
+			text-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+		}
+	/*FIN FOOTER*/
+/*--LOGIN END--*/
+
+
+
+
+
+
+
+/*---------------MEDIA QUERIES---------------*/
+
+@media (min-width: 768px){ /* TABLET */
+	
+	/*--INDEX--*/
+		/*HEADER*/
+			header {
+				height: 15vh;
+			}
+			header .logo {
+				margin-left: 30px;
+				font-size: 1.2em;
+			}
+
+			header a button {
+			    padding: 5px 15px;
+			    margin-right: 30px;
+
+			    font-size:1em;
+			}
+		/*FIN HEADER*/
+
+		/*BANNER*/
+			#banner {
+				height: 85vh;
+			}
+			#banner form .line {
+				margin: 15px 0;
+			}
+			#banner form .searchOptions {
+				font-size: 1.8em;
+			}
+			#banner form .search input{
+				width: 550px;
+				height: 60px;
+				border-radius: 10px 0 0 10px;
+				padding: 0 20px;
+
+				font-size: 1.2em;
+			}
+			#banner form .lupa {
+				height: 60px;
+				border-radius: 0 10px 10px 0;
+				padding: 0 15px;
+				
+				font-size: 1.5em;
+			}
+			#banner form .busquedaAvanzada {
+			    padding: 5px 20px;
+			    box-shadow: 0 0 20px 1px rgba(0,0,0,0.4);
+			    border-radius: 8px;
+				
+			    font-size:1em;
+			}
+		/*FIN BANNER*/
+
+		/*CONTENT*/
+			#content h1 {
+				font-size: 2.5em;
+				margin: 100px 0;
+			}
+			#content ul li {
+				margin: 200px 0;
+			}
+				/*#content ul li:first-child {
+					margin-top: 0; 
+				}
+				#content ul li:last-child {
+					margin-bottom: 0; 
+				}*/
+			#content .circle {
+				width: 300px;
+				height: 300px;
+				border-radius: 150px;
+				margin-bottom: 30px;
+			}
+			#content ul li p {
+				font-size: 1.5em;
+				margin: 0 100px;
+			}
+		/*FIN CONTENT*/
+
+		/*FOOTER*/
+			#footer #parallax {
+				height: 400px;
+			}
+			#footer #footer-board ul li a {
+				font-size: 1.5em;
+			}
+		/*FIN FOOTER*/
+	/*--INDEX END*/
+
+	/*--REGISTER--*/
+		.containerReg {
+			background-image: url(../images/cityLogin.jpg);
+			background-size: cover;
+			background-position: center;
+		}
+		.transparent {
+			background-color: rgba(0,0,0,0.5);
+			height: 200vh;
+			z-index: 1;
+		}
+		.registro {
+			width: 500px;
+		}
+		.registro h1 {
+			font-size: 1.8em;
+			margin-bottom: 30px;
+		}
+		.registro form input {
+			width: 70%;
+			height: 40px;
+			padding: 2px;
+			font-size: 1em;
+		}
+		.registro form label {
+			font-size: 1em;
+		}
+
+		.registro form button {
+			width: 60%;
+			padding: 5px 10px;
+			margin-top: 35px;
+			font-size: 1em;
+		}
+	/*--REGISTER END--*/
+
+	/*--LOGIN--*/
+		.containerLog {
+			background-image: url(../images/cityLogin.jpg);
+			background-size: cover;
+			background-position: center;
+		}
+		.transparentLog {
+			background-color: rgba(0,0,0,0.5);
+			height: 150vh;
+			z-index: 1;
+		}
+		.login {
+			width: 500px;
+		}
+		.login h1 {
+			font-size: 1.8em;
+			margin-bottom: 30px;
+		}
+		.login form input {
+			width: 70%;
+			height: 40px;
+			padding: 2px;
+			font-size: 1em;
+		}
+		.login form label {
+			font-size: 1em;
+		}
+
+		.login form button {
+			width: 60%;
+			padding: 5px 10px;
+			margin-top: 35px;
+			font-size: 1em;
+		}
+		.containerLog p {
+			font-size: 1em;
+
+			margin-bottom: 40px;
+		}
+		/*FOOTER*/
+			#footer #parallax {
+				height: 400px;
+			}
+			#footer #footerLog-board ul li a {
+				font-size: 1.5em;
+			}
+		/*FIN FOOTER*/
+	/*--LOGIN END--*/
+}
+
+@media (min-width: 960px){ /* DESKTOP */
+	/* --INDEX-- */
+		/*HEADER*/
+			header {
+				padding: 10px 0;
+				height: 12vh;
+			}
+
+			header .logo {
+				margin-left: 40px;
+				font-size: 0.9em;
+			}
+
+			header a button {
+			    border-radius: 10px;
+			    padding: 10px 20px;
+			    margin-right: 40px;
+				
+			    font-size:0.5em;
+			}
+			header a button:hover {
+				background-color: #f39c12;
+				text-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+			}
+		/*FIN HEADER*/
+
+		/*BANNER*/
+			#banner {
+				height: 88vh;
+			}
+
+			#banner form .line {
+				margin: 10px 0;
+			}
+			#banner form .searchOptions {
+				font-size: 1em;
+			}
+			#banner form .search input{
+				width: 900px;
+				height: 70px;
+				padding: 0 15px;
+
+				font-size: 0.7em;
+			}
+				#banner form .search input:hover {
+					box-shadow: 0 0 10px 0px #666;
+				}
+			#banner form .lupa {
+				height: 70px;
+				padding: 0 20px;
+				
+				font-size: 0.8em;
+			}
+				#banner form .lupa:hover {
+					background-color: #f39c12;
+				}
+			#banner form .busquedaAvanzada {
+			    font-size:0.6em;
+			}
+				#banner form .busquedaAvanzada:hover {
+					background-color: #f39c12;
+				}
+		/*FIN BANNER*/
+
+		/*CONTENT*/
+			#content h1 {
+				font-size: 2em;
+				margin: 150px 0;
+			}
+			#content ul li {
+				margin: 300px 0;
+			}
+				/*#content ul li:first-child {
+					margin-top: 0; 
+				}
+				#content ul li:last-child {
+					margin-bottom: 0; 
+				}*/
+			#content .circle {
+				width: 400px;
+				height: 400px;
+				border-radius: 200px;
+				margin-bottom: 30px;
+			}
+			#content .circle img {
+				width: 60%;
+			}
+			#content ul li p {
+				font-size: 1em;
+				text-align: center;
+				margin: 0 400px;
+			}
+		/*FIN CONTENT*/
+
+		/*FOOTER*/
+			#footer #parallax {
+				width: 100%;
+				height: 300px;
+				background-image: url(../images/city-glasses.jpg);
+				background-attachment: fixed;
+				background-size: cover;
+				background-position: center;
+			}
+			#footer #footer-board {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-around;
+				align-items: center;
+
+				padding: 15px 0;
+				background-color: #666;
+			}
+			#footer #footer-board .logo {
+				color: white;
+				border: solid 3px #fff;
+				padding: 5px 10px;
+				font-size: 0.5em;
+				margin: 0;
+			}
+			#footer #footer-board ul {
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				align-items: center;
+			}
+			#footer #footer-board ul li {
+				text-align: center;
+				padding: 0 ;
+				margin: 0 20px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				
+			}
+			#footer #footer-board ul li a {
+				font-size: 0.4em;
+				color: white;
+			}
+		/*FIN FOOTER*/
+	/* --INDEX END-- */
+
+	/*--REGISTER--*/
+		.containerReg {
+			background-image: url(../images/cityLogin.jpg);
+			background-size: cover;
+			background-position: center;
+			height: 100vh; 
+		}
+		.transparent {
+			background-color: rgba(0,0,0,0.5);
+			height: 100vh;
+			z-index: 1;
+		}
+		.registro {
+			width: 300px;
+		}
+		.registro h1 {
+			font-size: 0.8em;
+			margin-bottom: 30px;
+		}
+		.registro form input {
+			width: 80%;
+			height: 30px;
+			padding: 2px;
+			margin: 8px 0;
+			text-align: center;
+			border: none;
+			border-bottom: 1px solid #999;
+			outline: none;
+			
+			font-family: 'Montserrat', sans-serif;
+			font-size: 0.4em;
+		}
+		.registro form input:hover {
+			box-shadow: 0px 1.5px 0px -1px #3498db;
+		}
+		.registro form label {
+			font-size: 0.4em;
+		}
+
+		.registro form button {
+			width: 80%;
+			padding: 5px 10px;
+			margin: 10px 0;
+			margin-top: 20px;
+			font-size: 0.4em;
+		}
+		.registro form button:hover {
+			background-color: #c0392b;
+		}
+		.registro form button:active {
+			box-shadow: 1px 1px 1px #000;
+		}
+	/*--REGISTER END--*/
+
+	/*--LOGIN--*/
+		.containerLog {
+			height: 100vh; 
+		}
+		.transparentLog {
+			height: 100vh;
+			z-index: 1;
+		}
+		.login {
+			width: 300px;
+		}
+		.login h1 {
+			font-size: 0.8em;
+			margin-bottom: 30px;
+		}
+		.login form input {
+			width: 80%;
+			height: 30px;
+			padding: 2px;
+			margin: 8px 0;
+			
+			font-size: 0.4em;
+		}
+		.login form label {
+			font-size: 0.4em;
+		}
+
+		.login form button {
+			width: 80%;
+			padding: 5px 10px;
+			margin: 10px 0;
+			margin-top: 20px;
+			font-size: 0.4em;
+		}
+		.login form button:hover {
+			background-color: #c0392b;
+		}
+		.login form button:active {
+			box-shadow: 1px 1px 1px #000;
+		}
+		.containerLog p {
+			font-size: 0.3em;
+
+			margin-bottom: 40px;
+		}
+		/*FOOTER*/
+			#footer #parallax {
+				width: 100%;
+				height: 300px;
+			}
+			#footer #footerLog-board {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-around;
+				align-items: center;
+				position: absolute;
+				bottom: 0px;
+				width: 100%;
+
+				padding: 15px 0;
+				background-color: #666;
+			}
+			#footer #footerLog-board .logo {
+				color: white;
+				border: solid 3px #fff;
+				padding: 5px 10px;
+				font-size: 0.5em;
+				margin: 0;
+			}
+			#footer #footerLog-board ul {
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				align-items: center;
+			}
+			#footer #footerLog-board ul li {
+				text-align: center;
+				padding: 0 ;
+				margin: 0 20px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				
+			}
+			#footer #footerLog-board ul li a {
+				font-size: 0.4em;
+				color: white;
+			}
+		/*FIN FOOTER*/
+	/*--LOGIN END--*/
+}
+

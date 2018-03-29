@@ -1,44 +1,142 @@
+<!-- <?php
+	include('funciones.php');
+
+	session_start();
+
+	if (existeParametro('usuario',$_SESSION)) {
+		header("Location: perfil.php");
+		exit;
+	}
+
+	$usuario = dameValorDeParametro('usuario',$_POST);
+	$nombre = dameValorDeParametro('nombre',$_POST);
+	$email = dameValorDeParametro('email',$_POST);
+	$password = dameValorDeParametro('password',$_POST);
+	$password2 = dameValorDeParametro('password2',$_POST);
+	$existeFile = existeFileSinError('imagen');
+
+	$infoUsuario = [];
+
+	$error = false;
+
+	if (existeParametro('submit', $_POST)) {
+
+		if ($nombre && $email && $password && $existeFile) {
+
+			$infoUsuario = dameInfoUsuarioPorEmail($email);
+
+			if ($infoUsuario['existe']) {
+				$error = true;
+			} else{
+				guardarUsuario([
+					'usuario' =>$usuario,
+					'nombre'=>$nombre,
+					'email' => $email,
+					'password' => password_hash($password,PASSWORD_DEFAULT),
+					'id' => $infoUsuario['proximoId']+1,
+					'imagen' => guardarArchivoSubido('imagen')
+				]);
+				header("Location: login.php");
+				exit;
+			}
+
+		} else {
+			$error = true;
+		}
+
+	}
+
+?>
+
+ -->
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="./css/styles.css">
-    <title>Login Avecino</title>
-  </head>
-  <body>
-    <div class="container">
-        <div class="navegacion">
-          <header>
-            <nav>
-              <ul>
-                <!-- <li><a href="login.hmtl">Ingresar</a></li> -->
-                <li><a href="registration.html">Registrarse</a></li>
-                <li><a href="index.html">Busqueda</a></li>
-                <li><a href="faq.html">FAQ</a></li>
-                <li><a href="mailto:lautarogonzalez@outlook.com?Subject=Hola-Avecino">Contactar</a></li>
-              </ul>
-            </nav>
-          </header>
-        </div>
-      <div class="login">
-        <h1><img src="./images/logo.png" alt="Logo" longdesc="Login <Avecino>"></a><h1>
-        <div class="divLogin">
-          <h2>Ingresá tus datos</h2>
-          <form class="formLogin" action= method="post">
-            <label>Email</label>
-            <input type="email" name="usuario" required>
-            <label>Contraseña</label>
-            <input type="password" name="password" required>
-            <div class="recordarme">
-              <input type="checkbox" name="rememberPass" >
-              <label>Recordarme</label>
-            </div>
-            <button type="submit" name="Login">Ingresar</button>
-          </form>
-          <a href="#">¿Olvidó su contraseña?</a>
-        </div>
-      </div>
-    </div>
-  </body>
+<head>
+	<title>Registro</title>
+	
+	<!-- Metas -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- Scripts -->
+	<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+
+	<!-- Styles -->
+	<link rel="stylesheet" href="css/pruebaStyles.css">
+</head>
+<body>
+	<div class="containerLog">
+		<div class="transparentLog">
+			<!-- HEADER -->
+			<header>
+				<div class="logo">LOGO</div>
+				<a href="register.html"><button id="login-btn">Registrarse</button></a>
+			</header>
+			<!-- HEADER END -->
+
+			<!-- CONTENT -->
+				<div class="login">
+					<form method="post">
+							<h1>Login</h1>
+							
+							<!-- <?php if($error && array_key_exists('existe', $infoUsuario) && !$infoUsuario['existe']): ?>
+								<p>
+									<span>Error: el usuario no existe en la base de datos</span>
+								</p>
+
+							<?php endif; ?>
+
+							<?php if($error && $passwordError): ?>
+								<p>
+									<span>Error: La clave es invalida</span>
+								</p>
+
+							<?php endif; ?>	 -->	
+
+							<!-- Email Input -->
+							<input type="email" name="email" placeholder="Email" value="">
+							<!-- <?php if($error && !$email):?>
+								<span>Ingrese su email</span>
+							<?php endif; ?> -->
+
+							<!-- Password Input -->
+							<input type="password" placeholder="Contraseña" name="password">
+							<!-- <?php if($error && !$password):?>
+								<span>Ingrese su password</span>
+							<?php endif; ?> -->
+
+
+							<button type="submit" name="submit">Enviar</button>
+
+						
+
+					</form>
+
+				</div>
+
+				<p>
+					No tenes un cuenta? <a href="register.html">Registrate acá</a>
+				</p>
+			<!-- CONTENT END -->
+
+			<!-- FOOTER -->
+				<div id="footer">
+
+					<div id="footerLog-board">
+						<div class="logo">LOGO</div>
+						<ul>
+							<li><a href="register.html">Registrarse</a></li>
+							<li><a href="#">Busqueda Avanzada</a></li>
+							<li><a href="faq.html">FAQ</a></li>
+							<li><a href="#">Contactar</a></li>
+						</ul>
+					</div>
+				</div>
+			<!-- FOOTER END -->
+
+
+		</div>
+	</div>
+
+</body>
 </html>

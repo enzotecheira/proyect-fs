@@ -61,6 +61,14 @@ a{
 }
 
 @media (min-width:60px) {
+	.container{
+
+		max-width: 1360px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
   header{
     width: 100%;
     height: 15vh;
@@ -70,7 +78,7 @@ a{
     background-color: rgb(200,45,29); ///* TODO: cambiar */
   }
   header img{
-		height: 7vh;
+		height: 20vh;
     margin-left: 6vw;
   }
   header nav ul li{
@@ -83,8 +91,7 @@ a{
   header nav ul li a{
     display: block;
     font-size:3vh;
-    
-    color: white;
+		color: white;
     padding: 1vh 2vw;
     text-align: center;
     line-height: 2em;
@@ -97,6 +104,7 @@ a{
 	}
 
   .search{
+		width: 100%;
     background-image:url(../images/cityBackground.jpg);
     display: block;
     background-color: #cccccc;
@@ -108,11 +116,13 @@ a{
 		justify-content: center;
 	  }
   .comprarAlquilar{
-		width: 100vw;
-    height: 10vh;
+		height: 10vh;
 		display: flex;
 		justify-content: space-around;
   }
+	.formSearch{
+		width: 100%;
+	}
   /* Selector tipo de busqueda flecha abajo */
   .filtro {
 		flex-direction: column;
@@ -122,8 +132,7 @@ a{
     -ms-user-select: none;
     user-select: none;
     color: white;
-    
-    font-weight: bold;
+		font-weight: bold;
     margin-left: 13vw;
     margin-right: 13vw;
     font-size: 3vh;
@@ -176,8 +185,7 @@ a{
       text-shadow: 2px 2px 5px #3e5b5b;
   }
 	.keyWoldsSearch{
-		width: 100vw;
-		display: flex;
+	display: flex;
 	}
   .keyWoldsSearch input{
     flex-basis: 90%;
@@ -205,15 +213,13 @@ a{
 		margin-right: 10vw;
   }
 	.buscAvanz{
-		width: 100vw;
 		margin-top: 5vw;
 		display: flex;
 		justify-content: center;
 	}
   .buscAvanz a{
     color: white;
-		
-    line-height: 5vw;
+		line-height: 5vw;
     text-align: center;
     font-size: 3vh;
     text-shadow: 2px 2px 5px #3e5b5b;
@@ -257,14 +263,14 @@ a{
 	}
 	.caso1 p{
 		margin-top: 5%;
-		
+
 		text-align: center;
 		font-size: 3vh;
 		width: 49vw;
 	}
 	.caso2 p{
 		margin-top: 5%;
-		
+
 		text-align: center;
 		font-size: 3vh;
 		width: 49vw;
@@ -301,13 +307,13 @@ a{
 		width: 100%;
 		height: 30vh;
 		background-image:url(../images/city-glasees.jpg);
-		background-size: 100vw;
+		background-size: 100%;
 		background-position: center;
 		background-repeat: no-repeat;
 		background-attachment: fixed;
 	}
 	.pie{
-		width: 100vw;
+		width: 100%;
 		display: flex;
 		flex-direction: column;
 		align-items:center;
@@ -330,7 +336,7 @@ a{
 		text-align: center;
 	}
 	.linksPie a{
-		
+
 		font-size: 1.2em;
 		color: #cccccc;
 	}
@@ -359,7 +365,7 @@ a{
 		box-shadow: 0 0 20px 2px rgba(0,0,0,0.4);
 		border-radius: 5px;
 		background-color: #eee;
-		
+
 		font-size: 2vh;
 		color: rgb(200,45,29);
 		font-weight: bold;
@@ -402,6 +408,9 @@ a{
 		padding: 5px 10px;
 		margin: 15px;
 	}
+	.navegacion{
+		width: 100%;
+	}
 	.navegacion header{
 		display: flex;
 		flex-direction: column;
@@ -439,7 +448,7 @@ a{
 			box-shadow: 0 0 20px 2px rgba(0,0,0,0.4);
 			border-radius: 5px;
 			background-color: #eee;
-			
+
 			font-size: 2vh;
 			color: rgb(200,45,29);
 			font-weight: bold;
@@ -474,10 +483,8 @@ a{
 		}
 		/*-----FAQ-----*/
 		.preguntas{
-			position: absolute;
-			top: 18vh;
-			left: 50vw;
-			transform:translate(-50%,0);
+			margin-top: 2vh;
+			margin-bottom: 6vh;
 			width: 80vw;
 			display: flex;
 			flex-direction: column;
@@ -486,8 +493,7 @@ a{
 			box-shadow: 0 0 20px 2px rgba(0,0,0,0.4);
 			border-radius: 5px;
 			background-color: #eee;
-			
-			font-size: 1em;
+				font-size: 1em;
 			color: rgb(200,45,29);
 			padding: 2%;
 		}
@@ -513,7 +519,7 @@ a{
 			color: #333;
 		}
 }
-@media (min-width:992px){
+@media (min-width:1025px){
 	.casos{
 		display: flex;
 		flex-direction: row;
@@ -539,11 +545,9 @@ a{
 		flex-direction: row;
 		justify-content: center;
 		align-items: center;
-
-	}
-	.linksPie a{
-		
-		font-size: 2vh;
+		}
+	.linksPie a {
+		 font-size: 2vh;
 		color: #cccccc;
 	}
 	.linksPie li:first-child{
@@ -567,9 +571,11 @@ a{
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
+		font-size: 2vh;
 	}
 	.pregunta{
-		width: 50%;
+		width: 46%;
+		margin:1%;
 		border-style: solid;
     border-width: 2px;
 		border-color: #ae9b2c;
@@ -581,6 +587,7 @@ a{
 	}
 	.preguntas h1{
 		margin-bottom: 6vh;
+		width: 100%;
 	}
 }
 
@@ -589,5 +596,16 @@ a{
 	.registration{
 		transform:translate(-50%,-40%);
 		height: 75vh;
+	}
+}
+@media (min-width:1400px) {
+	.container{
+		width: 1360px;
+		position: absolute;
+		left:50%;
+		transform: translateX(-50%);
+	}
+	.filtro{
+		font-size: 3vh;
 	}
 }

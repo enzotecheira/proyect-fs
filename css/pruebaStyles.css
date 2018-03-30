@@ -63,6 +63,7 @@
 /*--INDEX--*/
 	/*HEADER*/
 		header {
+			/* width: 100vw; */
 			background-color: #e74c3c;
 			display: flex;
 			justify-content: space-between;
@@ -86,7 +87,7 @@
 		    border-radius: 5px;
 		    border: none;
 		    margin-right: 10px;
-			
+
 			font-family: 'Montserrat', sans-serif;
 		    font-size:2em;
 		    text-align: center;
@@ -145,7 +146,7 @@
 			border: none;
 			border-radius: 0 8px 8px 0;
 			padding: 0 10px;
-			
+
 			font-size: 2em;
 			color: white;
 		}
@@ -156,7 +157,7 @@
 		    box-shadow: 0 0 20px 1px rgba(0,0,0,0.4);
 		    border-radius: 5px;
 		    border: none;
-			
+
 			font-family: 'Montserrat', sans-serif;
 		    font-size:1.3em;
 		    text-align: center;
@@ -179,10 +180,10 @@
 			margin: 150px 0;
 		}
 			/*#content ul li:first-child {
-				margin-top: 0; 
+				margin-top: 0;
 			}
 			#content ul li:last-child {
-				margin-bottom: 0; 
+				margin-bottom: 0;
 			}*/
 		#content .circle {
 			width: 200px;
@@ -245,7 +246,7 @@
 		#footer #footer-board ul li {
 			text-align: center;
 			margin: 5px 0;
-			
+
 		}
 		#footer #footer-board ul li a {
 			font-size: 2em;
@@ -261,9 +262,12 @@
 	.containerReg {
 		background-image: url(../images/cityLogin.jpg);
 		background-size: cover;
-		background-position: center; 
+		background-position: center;
 	}
 	.transparent {
+		display: flex;
+		flex-direction: column;
+		justify-content:space-between;
 		background-color: rgba(0,0,0,0.5);
 		height: 150vh;
 		z-index: 1;
@@ -301,7 +305,7 @@
 		border: none;
 		border-bottom: 1px solid #999;
 		outline: none;
-		
+
 		font-family: 'Montserrat', sans-serif;
 		font-size: 1.5em;
 	}
@@ -320,7 +324,7 @@
 		box-shadow: 2px 2px 2px #111;
 		margin: 10px 0;
 		margin-top: 35px;
-		
+
 		font-weight: bold;
 		font-size: 1.8em;
 		text-shadow: 1px 1px rgba(0,0,0,0.4);
@@ -365,9 +369,12 @@
 	.containerLog {
 		background-image: url(../images/cityLogin.jpg);
 		background-size: cover;
-		background-position: center; 
+		background-position: center;
 	}
 	.transparentLog {
+		display: flex;
+		flex-direction: column;
+		justify-content:space-between;
 		background-color: rgba(0,0,0,0.5);
 		height: 110vh;
 		z-index: 1;
@@ -403,7 +410,7 @@
 		border: none;
 		border-bottom: 1px solid #999;
 		outline: none;
-		
+
 		font-family: 'Montserrat', sans-serif;
 		font-size: 1.5em;
 	}
@@ -422,7 +429,7 @@
 		box-shadow: 2px 2px 2px #111;
 		margin: 10px 0;
 		margin-top: 35px;
-		
+
 		font-weight: bold;
 		font-size: 1.8em;
 		text-shadow: 1px 1px rgba(0,0,0,0.4);
@@ -482,6 +489,7 @@
 			background-position: center;
 		}
 		#footer #footerLog-board {
+			width: 100vw;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
@@ -506,7 +514,7 @@
 		#footer #footerLog-board ul li {
 			text-align: center;
 			margin: 5px 0;
-			
+
 		}
 		#footer #footerLog-board ul li a {
 			font-size: 2em;
@@ -517,7 +525,61 @@
 		}
 	/*FIN FOOTER*/
 /*--LOGIN END--*/
-
+/*-----FAQ-----*/
+.containerFaq {
+	background-image: url(../images/cityLogin.jpg);
+	background-size: cover;
+	background-position: center;
+}
+.transparentFaq {
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content:space-between;
+	background-color: rgba(0,0,0,0.5);
+	background-repeat: repeat-x;
+	z-index: 1;
+}
+	.preguntas{
+		margin-top: 2vh;
+		margin-bottom: 6vh;
+		width: 80vw;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		box-shadow: 0 0 20px 2px rgba(0,0,0,0.4);
+		border-radius: 5px;
+		background-color: #eee;
+			font-size: 1em;
+		color: rgb(200,45,29);
+		padding: 2%;
+	}
+	.preguntas h1{
+		text-align: center;
+		font-weight: bold;
+		font-size: 1.5em;
+		margin-top: 2vh;
+		color: black;
+	}
+	.preguntas h2{
+		text-align: center;
+		font-weight:normal;
+		font-style: italic;
+		font-size: 1.3em;
+		margin: 2vh 0 2vh 0;
+		color: black;
+		background-color:rgb(241,196,15);
+		padding: 5px;
+	}
+	.preguntas p{
+		margin: 1%;
+		color: #333;
+	}
+	.headerFaq {
+		width: 100vw;
+	}
 
 
 
@@ -527,7 +589,7 @@
 /*---------------MEDIA QUERIES---------------*/
 
 @media (min-width: 768px){ /* TABLET */
-	
+
 	/*--INDEX--*/
 		/*HEADER*/
 			header {
@@ -568,14 +630,14 @@
 				height: 60px;
 				border-radius: 0 10px 10px 0;
 				padding: 0 15px;
-				
+
 				font-size: 1.5em;
 			}
 			#banner form .busquedaAvanzada {
 			    padding: 5px 20px;
 			    box-shadow: 0 0 20px 1px rgba(0,0,0,0.4);
 			    border-radius: 8px;
-				
+
 			    font-size:1em;
 			}
 		/*FIN BANNER*/
@@ -589,10 +651,10 @@
 				margin: 200px 0;
 			}
 				/*#content ul li:first-child {
-					margin-top: 0; 
+					margin-top: 0;
 				}
 				#content ul li:last-child {
-					margin-bottom: 0; 
+					margin-bottom: 0;
 				}*/
 			#content .circle {
 				width: 300px;
@@ -700,6 +762,30 @@
 			}
 		/*FIN FOOTER*/
 	/*--LOGIN END--*/
+
+	.preguntas{
+		width: 90vw;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		font-size: 2vh;
+	}
+	.pregunta{
+		width: 46%;
+		margin:1%;
+		border-style: solid;
+    border-width: 2px;
+		border-color: #ae9b2c;
+		border-radius: 5px;
+		background-color: #FFF9E9
+	}
+	.preguntas p{
+		padding: 2%;
+	}
+	.preguntas h1{
+		margin-bottom: 6vh;
+		width: 100%;
+	}
 }
 
 @media (min-width: 960px){ /* DESKTOP */
@@ -719,7 +805,7 @@
 			    border-radius: 10px;
 			    padding: 10px 20px;
 			    margin-right: 40px;
-				
+
 			    font-size:0.5em;
 			}
 			header a button:hover {
@@ -752,7 +838,7 @@
 			#banner form .lupa {
 				height: 70px;
 				padding: 0 20px;
-				
+
 				font-size: 0.8em;
 			}
 				#banner form .lupa:hover {
@@ -775,10 +861,10 @@
 				margin: 300px 0;
 			}
 				/*#content ul li:first-child {
-					margin-top: 0; 
+					margin-top: 0;
 				}
 				#content ul li:last-child {
-					margin-bottom: 0; 
+					margin-bottom: 0;
 				}*/
 			#content .circle {
 				width: 400px;
@@ -834,7 +920,7 @@
 				display: flex;
 				justify-content: center;
 				align-items: center;
-				
+
 			}
 			#footer #footer-board ul li a {
 				font-size: 0.4em;
@@ -848,7 +934,7 @@
 			background-image: url(../images/cityLogin.jpg);
 			background-size: cover;
 			background-position: center;
-			height: 100vh; 
+			height: 100vh;
 		}
 		.transparent {
 			background-color: rgba(0,0,0,0.5);
@@ -871,7 +957,7 @@
 			border: none;
 			border-bottom: 1px solid #999;
 			outline: none;
-			
+
 			font-family: 'Montserrat', sans-serif;
 			font-size: 0.4em;
 		}
@@ -899,7 +985,7 @@
 
 	/*--LOGIN--*/
 		.containerLog {
-			height: 100vh; 
+			height: 100vh;
 		}
 		.transparentLog {
 			height: 100vh;
@@ -917,7 +1003,7 @@
 			height: 30px;
 			padding: 2px;
 			margin: 8px 0;
-			
+
 			font-size: 0.4em;
 		}
 		.login form label {
@@ -952,10 +1038,9 @@
 				flex-direction: row;
 				justify-content: space-around;
 				align-items: center;
-				position: absolute;
-				bottom: 0px;
-				width: 100%;
-
+				/* position: absolute;
+				bottom: 0px; */
+				width: 100vw;
 				padding: 15px 0;
 				background-color: #666;
 			}
@@ -979,7 +1064,7 @@
 				display: flex;
 				justify-content: center;
 				align-items: center;
-				
+
 			}
 			#footer #footerLog-board ul li a {
 				font-size: 0.4em;
@@ -987,5 +1072,6 @@
 			}
 		/*FIN FOOTER*/
 	/*--LOGIN END--*/
-}
 
+
+}

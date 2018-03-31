@@ -10,6 +10,7 @@
 
 	$email = dameValorDeParametro('email',$_POST);
 	$password = dameValorDeParametro('password',$_POST);
+	$recordarme = dameValorDeParametro('recordarme',$_POST);
 
 	$infoUsuario = [];
 
@@ -22,6 +23,10 @@
 			if ($infoUsuario['existe']) {
 				if (password_verify($password, $infoUsuario['usuario']['password'] )) {
 					$_SESSION['usuario'] = $infoUsuario['usuario'];
+					if ($recordarme) {
+						setcookie("email",$email);
+						setcookie("password",$password);
+					}
 					header("Location: perfil.php");
 					exit;
 				} else {
@@ -75,7 +80,11 @@
 									<?php if($error && array_key_exists('existe', $infoUsuario) && !$infoUsuario['existe']): ?>
 										<input style="background-color:red" type="email" name="email" placeholder="Email incorrecto. Reingrese">
 										<?php else: ?>
-											<input type="email" name="email" placeholder="Email" value="<?= $email ?>">
+											<?php if (isset($_COOKIE["email"])): ?>
+												<input type="email" name="email" placeholder="Email" value="<?= $_COOKIE["email"] ?>">
+												<?php else: ?>
+												<input type="email" name="email" placeholder="Email" value="<?= $email ?>">
+											<?php endif; ?>
 									<?php endif; ?>
 							<?php endif; ?>
 
@@ -87,14 +96,19 @@
 									<?php if($error && $passwordError): ?>
 										<input style="background-color:red" type="password" placeholder="Error: La clave es invalida" name="password">
 									<?php else: ?>
-										<input type="password" placeholder="Contraseña" name="password">
+										<?php if (isset($_COOKIE["password"])): ?>
+											<input type="password" placeholder="Contraseña" name="password" value="<?= $_COOKIE["password"] ?>">
+											<?php else: ?>
+												<input type="password" placeholder="Contraseña" name="password">
+									<?php endif; ?>
 								<?php endif; ?>
 							<?php endif; ?>
 
+							<!--  Recordarme  -->
 
-							<button type="submit" name="submit">Enviar</button>
+							<label class="recordarme"> <input type="checkbox" name="recordarme" value="recordarme" >Recordarme</label>
 
-
+					<button type="submit" name="submit">Enviar</button>
 
 					</form>
 
@@ -102,6 +116,9 @@
 
 				<p>
 					No tenes un cuenta? <a href="register.php">Registrate acá</a>
+				<br>
+				<br>
+					No recordás tu contraseña?<a href="renuevaPassword.php?">Click acá</a>
 				</p>
 			<!-- CONTENT END -->
 

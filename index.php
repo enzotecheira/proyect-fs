@@ -1,3 +1,9 @@
+<?php
+session_start();
+include('funciones.php');
+
+
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,7 +26,19 @@
 		<!-- HEADER -->
 		<header>
 			<div class="logo">LOGO</div>
-			<a href="login.php"><button id="login-btn">Ingresar</button></a>
+			<?php if (existeParametro('usuario',$_SESSION)): ?>
+				<?php $usuario = $_SESSION['usuario']; ?>
+				<div class="usuarioHeader">
+					<a href="perfil.php">
+						<label>
+							<img src="<?= $usuario['imagen']?>" > <br> <?= $usuario['usuario']?>
+						</label>
+					</a>
+				</div>
+				<?php else: ?>
+					<a href="login.php"><button id="login-btn">Ingresar</button></a>
+			<?php endif; ?>
+
 		</header>
 		<!-- HEADER END -->
 

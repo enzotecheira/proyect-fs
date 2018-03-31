@@ -98,6 +98,14 @@
 			justify-content: center;
 			align-items: center;
 		}
+		.usuarioHeader{
+			max-width: 2vw;
+			font-size: 0.5em;
+			margin-right: 5vw;
+		}
+		.usuarioHeader img{
+			width: 2vw;
+		}
 	/*FIN HEADER*/
 
 	/*BANNER*/
@@ -466,6 +474,15 @@
 	form button:active {
 		box-shadow: 1px 1px 1px #000;
 	}
+	.recordarme{
+		text-align: center;
+		-ms-transform: scale(0.5); /* IE */
+  	-moz-transform: scale(0.5); /* FF */
+  	-webkit-transform: scale(0.5); /* Safari and Chrome */
+  	-o-transform: scale(0.5); /* Opera */
+
+	}
+
 	.containerLog p {
 		font-size: 1.5em;
 		text-align: center;

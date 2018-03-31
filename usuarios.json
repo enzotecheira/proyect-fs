@@ -7,6 +7,14 @@
             "password": "$2y$10$9humYabsbuYUcb\/yPmh3ceDRtkuoNAIanhgeJT.HaPbToe52BsnIe",
             "id": 1,
             "imagen": ".\/archivos\/imagen_1522452286.png"
+        },
+        {
+            "usuario": "Lautaro",
+            "nombre": "Lautaro Gonzalez",
+            "email": "lautarogonzalez@outlook.com",
+            "password": "$2y$10$.4SBJ35y.watoWcbB\/ANJutNm8KX.SDQws1vBCLZfFvINl0QdeXUO",
+            "id": 2,
+            "imagen": ".\/archivos\/imagen_1522472521.png"
         }
     ]
 }

@@ -68,14 +68,14 @@
 <body>
 	<div class="containerReg">
 		<div class="transparent">
-			<!-- HEADER -->
+<!-- HEADER -->
 			<header>
 				<div class="logo">LOGO</div>
 				<a href="login.php"><button id="login-btn">Ingresar</button></a>
 			</header>
-			<!-- HEADER END -->
+<!-- HEADER END -->
 
-			<!-- CONTENT -->
+<!-- CONTENT -->
 				<div class="registro">
 					<form method="post" enctype="multipart/form-data">
 
@@ -85,7 +85,7 @@
 						<label style="color:red">Error: el usuario ya existe en la base de datos</label>
 					<?php endif; ?>
 
-					<!-- Usuario Input -->
+<!-- Usuario Input -->
 
 					<?php if($error && !$usuario):?>
 						<input style="background-color:red" type="text" name="usuario" placeholder="* Ingrese un usuario" value="<?=$usuario?>">
@@ -93,7 +93,7 @@
 						<input type="text" name="usuario" placeholder="Usuario" value="<?=$usuario?>">
 					<?php endif; ?>
 
-					<!-- Nombre Input -->
+<!-- Nombre Input -->
 
 					<?php if($error && !$nombre):?>
 						<input style="background-color:red" type="text" name="nombre" placeholder="* Ingrese su nombre" value="<?=$nombre?>">
@@ -101,21 +101,21 @@
 					<input type="text" name="nombre" placeholder="Nombre completo" value="<?=$nombre?>">
 					<?php endif; ?>
 
-					<!-- Email Input -->
+<!-- Email Input -->
 					<?php if($error && !$email):?>
 						<input style="background-color:red" type="email" name="email" placeholder="* Ingrese su email" value="<?=$email?>">
 					<?php else: ?>
 						<input type="email" name="email" placeholder="Email" value="<?=$email?>">
 					<?php endif; ?>
 
-					<!-- Password Input -->
+<!-- Password Input -->
 					<?php if($error && !$password):?>
 							<input style="background-color:red" type="password" placeholder="* Ingrese su contraseña" name="password">
 						<?php else: ?>
 							<input type="password" placeholder="Contraseña" name="password">
 					<?php endif; ?>
 
-					<!-- Password Input 2 -->
+<!-- Password Input 2 -->
 
 					<?php if($error && !$password2):?> <!--validacion de password2-->
 						<input style="background-color:red" type="password" placeholder="* Confirme su password" name="password2">
@@ -127,10 +127,7 @@
 						<?php endif;  ?>
 					<?php endif; ?>
 
-
-
-					<!-- Imagen Input -->
-
+<!-- Imagen Input -->
 
 					<?php if($error && !$existeFile):?> <!--validacion de Insertar imagen-->
 							<label for="imagen" style="color:red" >* Insertar imagen:</label>
@@ -142,9 +139,9 @@
 					<button type="submit" name="submit">Enviar</button>
 				</form>
 			</div>
-			<!-- CONTENT END -->
+<!-- CONTENT END -->
 
-			<!-- FOOTER -->
+<!-- FOOTER -->
 				<div id="footer">
 
 					<div id="footer-board">
@@ -157,7 +154,7 @@
 						</ul>
 					</div>
 				</div>
-			<!-- FOOTER END -->
+<!-- FOOTER END -->
 
 
 		</div>

@@ -1,3 +1,9 @@
+<?php
+session_start();
+include('funciones.php');
+
+
+ ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -14,10 +20,25 @@
   <body>
     <div class="containerFaq">
       <div class="transparentFaq">
-        <header class="headerFaq">
-          <div class="logo">LOGO</div>
-          <a href="login.php"><button id="login-btn">Ingresar</button></a>
-        </header>
+
+<!-- HEADER -->
+    		<header class="headerFaq">
+    			<div class="logo">LOGO</div>
+    			<?php if (existeParametro('usuario',$_SESSION)): ?>
+    				<?php $usuario = $_SESSION['usuario']; ?>
+            <div class="usuarioHeader">
+    					<a href="perfil.php">
+    						<label>
+    							<img src="<?= $usuario['imagen']?>" > <br> <?= $usuario['usuario']?>
+    						</label>
+    					</a>
+    				</div>
+      			<?php else: ?>
+      				<a href="login.php"><button id="login-btn">Ingresar</button></a>
+      		<?php endif; ?>
+      	</header>
+<!-- HEADER END -->
+
         <section class="preguntas">
           <h1>Preguntas Frecuentes</h1>
           <div class="pregunta">

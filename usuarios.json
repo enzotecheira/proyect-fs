@@ -1,0 +1,12 @@
+{
+    "usuarios": [
+        {
+            "usuario": "a",
+            "nombre": "a",
+            "email": "a@a.com",
+            "password": "$2y$10$9humYabsbuYUcb\/yPmh3ceDRtkuoNAIanhgeJT.HaPbToe52BsnIe",
+            "id": 1,
+            "imagen": ".\/archivos\/imagen_1522452286.png"
+        }
+    ]
+}

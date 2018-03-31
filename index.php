@@ -2,11 +2,11 @@
 <html>
 <head>
 	<title>Avecino</title>
-	
+
 	<!-- Metas -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
+
 	<!-- Scripts -->
 	<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
 
@@ -15,15 +15,15 @@
 </head>
 <body>
 	<div class="container">
-		
+
 
 		<!-- HEADER -->
 		<header>
 			<div class="logo">LOGO</div>
-			<a href="login.html"><button id="login-btn">Ingresar</button></a>
+			<a href="login.php"><button id="login-btn">Ingresar</button></a>
 		</header>
 		<!-- HEADER END -->
-		
+
 
 
 		<!-- BANNER -->
@@ -35,11 +35,11 @@
 				</div>
 				<div class="line search">
 					<input type="text" name="search" placeholder="Palabras clave">
-					<button class="lupa" type="submit" name="submit"><i class="fas fa-search"></i></button>			
+					<button class="lupa" type="submit" name="submit"><i class="fas fa-search"></i></button>
 				</div>
 				<div class="line"><a href=""><button class="busquedaAvanzada">Busqueda avanzada</button></a></div>
 			</form>
-		</div>		
+		</div>
 		<!-- BANNER END -->
 
 
@@ -79,10 +79,10 @@
 			<div id="footer-board">
 				<div class="logo">LOGO</div>
 				<ul>
-					<li><a href="login.html">Ingresar</a></li>
-					<li><a href="register.html">Registrarse</a></li>
+					<li><a href="login.php">Ingresar</a></li>
+					<li><a href="register.php">Registrarse</a></li>
 					<li><a href="#">Busqueda Avanzada</a></li>
-					<li><a href="faq.html">FAQ</a></li>
+					<li><a href="faq.php">FAQ</a></li>
 					<li><a href="#">Contactar</a></li>
 				</ul>
 			</div>

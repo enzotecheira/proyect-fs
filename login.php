@@ -1,0 +1,128 @@
+<?php
+	include('funciones.php');
+
+	session_start();
+
+	if (existeParametro('usuario',$_SESSION)) {
+		header("Location: perfil.php");
+		exit;
+	}
+
+	$email = dameValorDeParametro('email',$_POST);
+	$password = dameValorDeParametro('password',$_POST);
+
+	$infoUsuario = [];
+
+	$error = false;
+	$passwordError = false;
+
+	if (existeParametro('submit', $_POST)) {
+		if($email && $password) {
+			$infoUsuario = dameInfoUsuarioPorCampo('email',$email);
+			if ($infoUsuario['existe']) {
+				if (password_verify($password, $infoUsuario['usuario']['password'] )) {
+					$_SESSION['usuario'] = $infoUsuario['usuario'];
+					header("Location: perfil.php");
+					exit;
+				} else {
+					$error = true;
+					$passwordError = true;
+				}
+			} else {
+				$error = true;
+			}
+		} else {
+			$error = true;
+		}
+	}
+
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registro</title>
+
+	<!-- Metas -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Scripts -->
+	<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+
+	<!-- Styles -->
+	<link rel="stylesheet" href="css/pruebaStyles.css">
+</head>
+<body>
+	<div class="containerLog">
+		<div class="transparentLog">
+			<!-- HEADER -->
+			<header>
+				<div class="logo">LOGO</div>
+				<a href="register.php"><button id="login-btn">Registrarse</button></a>
+			</header>
+			<!-- HEADER END -->
+
+			<!-- CONTENT -->
+				<div class="login">
+					<form method="post">
+							<h1>Login</h1>
+
+								<!-- Email Input -->
+							<?php if($error && !$email):?>
+								<input style="background-color:red" type="email" name="email" placeholder="Ingrese su email" value="<?= $email ?>">
+								<?php else: ?>
+									<?php if($error && array_key_exists('existe', $infoUsuario) && !$infoUsuario['existe']): ?>
+										<input style="background-color:red" type="email" name="email" placeholder="Email incorrecto. Reingrese">
+										<?php else: ?>
+											<input type="email" name="email" placeholder="Email" value="<?= $email ?>">
+									<?php endif; ?>
+							<?php endif; ?>
+
+							<!-- Password Input -->
+
+							<?php if($error && !$password):?>
+								<input style="background-color:red" type="password" placeholder="Ingrese su password" name="password">
+								<?php else: ?>
+									<?php if($error && $passwordError): ?>
+										<input style="background-color:red" type="password" placeholder="Error: La clave es invalida" name="password">
+									<?php else: ?>
+										<input type="password" placeholder="Contraseña" name="password">
+								<?php endif; ?>
+							<?php endif; ?>
+
+
+							<button type="submit" name="submit">Enviar</button>
+
+
+
+					</form>
+
+				</div>
+
+				<p>
+					No tenes un cuenta? <a href="register.php">Registrate acá</a>
+				</p>
+			<!-- CONTENT END -->
+
+			<!-- FOOTER -->
+				<div id="footer">
+
+					<div id="footerLog-board">
+						<div class="logo">LOGO</div>
+						<ul>
+							<li><a href="register.php">Registrarse</a></li>
+							<li><a href="index.php">Inicio</a></li>
+							<li><a href="faq.php">FAQ</a></li>
+							<li><a href="#">Contactar</a></li>
+						</ul>
+					</div>
+				</div>
+			<!-- FOOTER END -->
+
+
+		</div>
+	</div>
+
+</body>
+</html>

@@ -16,7 +16,7 @@
       <div class="transparentFaq">
         <header class="headerFaq">
           <div class="logo">LOGO</div>
-          <a href="register.html"><button id="login-btn">Registrarse</button></a>
+          <a href="login.php"><button id="login-btn">Ingresar</button></a>
         </header>
         <section class="preguntas">
           <h1>Preguntas Frecuentes</h1>
@@ -62,9 +62,9 @@
             <div id="footerLog-board">
               <div class="logo">LOGO</div>
               <ul>
-                <li><a href="register.html">Registrarse</a></li>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="register.php">Registrarse</a></li>
+                <li><a href="index.php">Inicio</a></li>
+                <li><a href="faq.php">FAQ</a></li>
                 <li><a href="#">Contactar</a></li>
               </ul>
             </div>

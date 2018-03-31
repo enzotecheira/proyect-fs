@@ -580,7 +580,7 @@
 	.headerFaq {
 		width: 100vw;
 	}
-
+/*-----FAQ END-----*/
 
 
 
@@ -763,6 +763,7 @@
 		/*FIN FOOTER*/
 	/*--LOGIN END--*/
 
+/*-----FAQ-----*/
 	.preguntas{
 		width: 90vw;
 		display: flex;
@@ -786,6 +787,7 @@
 		margin-bottom: 6vh;
 		width: 100%;
 	}
+	/*-----FAQ END-----*/
 }
 
 @media (min-width: 960px){ /* DESKTOP */

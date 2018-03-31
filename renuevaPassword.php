@@ -9,19 +9,35 @@
 	}
 
 	$email = dameValorDeParametro('email',$_POST);
-  $codigo= rand(1,50000);
+  $codigo= dameValorDeParametro('codigo',$_POST,rand(1,50000));
+	$password = dameValorDeParametro('password',$_POST);
+	$password2 = dameValorDeParametro('password2',$_POST);
+	$codigoIngresadoPorUsuario= dameValorDeParametro('codigoIngresadoPorUsuario',$_POST);
+
 
 	$infoUsuario = [];
 
 	$error = false;
+	$errorReingresoPassword=false;
 
 	if (existeParametro('submit', $_POST)) {
 		if($email) {
 			$infoUsuario = dameInfoUsuarioPorCampo('email',$email);
 			if ($infoUsuario['existe']) {
-          mail($email, 'Codigo', $codigo);
-					header("Location: renuevaPassword2.php");
+				if (!$codigo) {
+					mail($email, 'Codigo', $codigo);
+				}
+				if ($codigo!=null && $password!==null && $password2!=null && $codigoIngresadoPorUsuario==$codigo && $password==$password2) {
+					$nuevaPassword=password_hash($password,PASSWORD_DEFAULT);
+					modificarCampoUsuario($nuevaPassword,$infoUsuario['posicion'],'password');
+					header("Location: login.php");
 					exit;
+				}else {
+					$errorReingresoPassword=true;
+					$error = true;
+				}
+
+
 			} else {
 				$error = true;
 			}
@@ -29,7 +45,7 @@
 			$error = true;
 		}
 	}
-
+echo "$codigo";
 ?>
 
 <!DOCTYPE html>
@@ -68,12 +84,49 @@
 								<?php else: ?>
 									<?php if($error && array_key_exists('existe', $infoUsuario) && !$infoUsuario['existe']): ?>
 										<input style="background-color:red" type="email" name="email" placeholder="Email incorrecto. Reingrese">
-										<?php else: ?>
-											<input type="email" name="email" placeholder="Email">
+									<?php else: ?>
+										<?php if ($email&&!$codigoIngresadoPorUsuario): ?>
+											<input type="text" name="codigoIngresadoPorUsuario" placeholder="Código Recibido">
+											<input type="hidden" name="codigo" value="<?=$codigo?>">
+											<input type="email" hidden="true" name="email" value="<?=$email?>">
+											<?php else: ?>
+												<?php if ($email&&$codigoIngresadoPorUsuario==$codigo): ?>
+													<input type="email" hidden="true" name="email" value="<?=$email?>">
+													<input type="hidden" name="codigo" value="<?=$codigo?>">
+													<input type="hidden" name="codigoIngresadoPorUsuario" value="<?=$codigoIngresadoPorUsuario?>">
+													<?php else: ?>
+														<input type="email" name="email" placeholder="Email">
+														<input type="hidden" name="codigo" value="<?=$codigo?>">
+												<?php endif; ?>
+											<?php endif; ?>
 									<?php endif; ?>
 							<?php endif; ?>
 
-            <label>Ingrese su mail y reciba el código</label>
+							<?php if (!$email): ?>
+								<label>Ingrese su mail y reciba el código</label>
+							<?php endif; ?>
+
+<!-- Campos ingreso Password Input -->
+							<?php if ($codigoIngresadoPorUsuario==$codigo): ?>
+								<!-- Password Input -->
+								<?php if($error && !$password):?>
+									<input type="password" placeholder="* Ingrese su contraseña" name="password">
+								<?php else: ?>
+									<input type="password" placeholder="Nueva Contraseña" name="password">
+								<?php endif; ?>
+
+								<!-- Password Input 2 -->
+
+								<?php if($error && !$password2):?> <!--validacion de password2-->
+									<input type="password" placeholder="* Confirme su password" name="password2">
+								<?php else: ?>
+									<?php if ($error && $errorReingresoPassword) :?>
+										<input style="background-color:red" type="password" placeholder="Las contraseñas no coinciden" name="password2">
+									<?php else: ?>
+										<input type="password" placeholder="Repetir contraseña" name="password2">
+									<?php endif;  ?>
+								<?php endif; ?>
+							<?php endif; ?>
 
 
 

@@ -52,16 +52,20 @@
 				<div class="registro">
 					<form method="post" enctype="multipart/form-data">
 
-						<h1>Bienvenido: <?= $usuario['nombre']?></h1>
+						<h1>Bienvenido <?= $usuario['nombre']?></h1>
+						<br>
 						<p>Usuario: <?= $usuario['usuario']?></p>
 						<p>Email: <?= $usuario['email']?></p>
+						<br>
 						<p>
 							<img src="<?= $usuario['imagen']?>" style="max-width: 200px;">
 						</p>
-
-						<a href="./logout.php">Cerrar sesión</a>
 						<br>
-						<a href="./modificar.php">Modifica tu perfil</a>
+						<p class="recordarme">
+							<a href="./logout.php">Cerrar sesión</a>
+							|
+							<a href="./modificar.php">Modifica tu perfil</a>
+						</p>
 					</div>
 
 			<!-- FOOTER -->

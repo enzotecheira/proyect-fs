@@ -23,7 +23,7 @@
 		margin: 0;
 		padding: 0;
 		border: 0;
-		font-size: 100%;
+		font-size: 1em;
 		font: inherit;
 		vertical-align: baseline;
 	}
@@ -67,9 +67,10 @@
 			background-color: #e74c3c;
 			display: flex;
 			justify-content: space-between;
+			flex-direction: row;
 			align-items: center;
 			padding: 10px 0;
-			height: 12vh;
+			overflow: hidden;
 		}
 
 		header .logo {
@@ -88,23 +89,23 @@
 		    border: none;
 		    margin-right: 10px;
 
-			font-family: 'Montserrat', sans-serif;
+			//font-family: 'Montserrat', sans-serif;
 		    font-size:2em;
 		    text-align: center;
 		    text-transform: uppercase;
 		}
-		header a {
+		/*header a {
 			display: flex;
 			justify-content: center;
 			align-items: center;
-		}
+		}*/
 		.usuarioHeader{
-			max-width: 2vw;
+			max-width: 10vw;
 			font-size: 0.5em;
 			margin-right: 5vw;
 		}
 		.usuarioHeader img{
-			width: 2vw;
+			width: 10vw;
 		}
 	/*FIN HEADER*/
 
@@ -145,7 +146,7 @@
 			border-radius: 8px 0 0 8px;
 			padding: 0 10px;
 
-			font-family: 'Montserrat', sans-serif;
+			//font-family: 'Montserrat', sans-serif;
 			font-size: 2.5em;
 		}
 		#banner form .lupa {
@@ -166,7 +167,7 @@
 		    border-radius: 5px;
 		    border: none;
 
-			font-family: 'Montserrat', sans-serif;
+			//font-family: 'Montserrat', sans-serif;
 		    font-size:1.3em;
 		    text-align: center;
 		}
@@ -277,11 +278,11 @@
 		flex-direction: column;
 		justify-content:space-between;
 		background-color: rgba(0,0,0,0.5);
-		height: 150vh;
+		//height: 150vh;
 		z-index: 1;
 	}
 	.registro {
-		width: 300px;
+		width: 95%;
 		border-radius: 10px;
 		margin: 0 auto;
 		box-shadow: 0 0 15px 1px rgba(0,0,0,0.6);
@@ -290,6 +291,7 @@
 		background-color: #fff;
 		display: flex;
 		align-items: center;
+		flex-direction: column;
 	}
 	.registro h1 {
 		font-size: 4em;
@@ -314,7 +316,7 @@
 		border-bottom: 1px solid #999;
 		outline: none;
 
-		font-family: 'Montserrat', sans-serif;
+		//font-family: 'Montserrat', sans-serif;
 		font-size: 1.5em;
 	}
 	.registro form input:hover {
@@ -323,7 +325,6 @@
 	.registro form label {
 		font-size: 1.5em;
 	}
-
 	.registro form button {
 		width: 80%;
 		padding: 5px 10px;
@@ -340,6 +341,9 @@
 	}
 	.registro form button:hover {
 		background-color: #34afff;
+	}
+	.registro form p,a {
+		//font-size: 0.5em;
 	}
 
 	.login-btn {
@@ -419,7 +423,7 @@
 		border-bottom: 1px solid #999;
 		outline: none;
 
-		font-family: 'Montserrat', sans-serif;
+		//font-family: 'Montserrat', sans-serif;
 		font-size: 1.5em;
 	}
 	.login form input:hover {
@@ -569,7 +573,7 @@
 		box-shadow: 0 0 20px 2px rgba(0,0,0,0.4);
 		border-radius: 5px;
 		background-color: #eee;
-			font-size: 1em;
+		font-size: 1em;
 		color: rgb(200,45,29);
 		padding: 2%;
 	}
@@ -609,9 +613,6 @@
 
 	/*--INDEX--*/
 		/*HEADER*/
-			header {
-				height: 15vh;
-			}
 			header .logo {
 				margin-left: 30px;
 				font-size: 1.2em;
@@ -623,6 +624,13 @@
 
 			    font-size:1em;
 			}
+			.usuarioHeader{
+				max-width: 6vw;
+			}
+			.usuarioHeader img{
+				width: 6vw;
+			}
+	
 		/*FIN HEADER*/
 
 		/*BANNER*/
@@ -703,11 +711,11 @@
 		}
 		.transparent {
 			background-color: rgba(0,0,0,0.5);
-			height: 200vh;
+			//height: 200vh;
 			z-index: 1;
 		}
 		.registro {
-			width: 500px;
+			width: 75%;
 		}
 		.registro h1 {
 			font-size: 1.8em;
@@ -729,7 +737,7 @@
 			margin-top: 35px;
 			font-size: 1em;
 		}
-	/*--REGISTER END--*/
+		/*--REGISTER END--*/
 
 	/*--LOGIN--*/
 		.containerLog {
@@ -810,11 +818,6 @@
 @media (min-width: 960px){ /* DESKTOP */
 	/* --INDEX-- */
 		/*HEADER*/
-			header {
-				padding: 10px 0;
-				height: 12vh;
-			}
-
 			header .logo {
 				margin-left: 40px;
 				font-size: 0.9em;
@@ -830,6 +833,12 @@
 			header a button:hover {
 				background-color: #f39c12;
 				text-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+			}
+			.usuarioHeader{
+				max-width: 4vw;
+			}
+			.usuarioHeader img{
+				width: 4vw;
 			}
 		/*FIN HEADER*/
 
@@ -951,7 +960,7 @@
 	/*--REGISTER--*/
 		.containerReg {
 			background-image: url(../images/cityLogin.jpg);
-			background-size: cover;
+			background-size: contain;
 			background-position: center;
 			height: 100vh;
 		}
@@ -961,7 +970,8 @@
 			z-index: 1;
 		}
 		.registro {
-			width: 300px;
+			width: 60%;
+			overflow: hidden;
 		}
 		.registro h1 {
 			font-size: 0.8em;
@@ -977,7 +987,7 @@
 			border-bottom: 1px solid #999;
 			outline: none;
 
-			font-family: 'Montserrat', sans-serif;
+			//font-family: 'Montserrat', sans-serif;
 			font-size: 0.4em;
 		}
 		.registro form input:hover {
@@ -1000,6 +1010,7 @@
 		.registro form button:active {
 			box-shadow: 1px 1px 1px #000;
 		}
+	
 	/*--REGISTER END--*/
 
 	/*--LOGIN--*/

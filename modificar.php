@@ -93,7 +93,10 @@
 
 <div class="registro">
 
- 	<form method="post" enctype="multipart/form-data">
+	 <form method="post" enctype="multipart/form-data">
+	 
+	 <h1>Modificar datos</h1>
+
 		<?php if($error && array_key_exists('existe', $infoUsuario) && !$infoUsuario['existe']): ?>
 			<p>
 				<span>Error: el usuario no existe en la base de datos</span>
@@ -107,42 +110,28 @@
 
 		<?php endif; ?>
 
-		<p>
- 			<label for="nombre">Nombre</label>
- 			<input type="text" name="nombre" value="<?= $nombre?>">
- 			<?php if($error && !$nombre):?>
- 				<span>Ingrese su nombre</span>
- 			<?php endif; ?>
- 		</p>
+		<input type="text" name="nombre" placeholder="Usuario" value="<?= $nombre?>" alt="Usuario">
+		<?php if($error && !$nombre):?>
+			<span>Ingrese su nombre</span>
+		<?php endif; ?>
 
- 		<p>
- 			<label for="email">Email</label>
- 			<input type="email" name="email" value="<?= $email?>">
- 			<?php if($error && !$email):?>
- 				<span>Cambie su email</span>
- 			<?php endif; ?>
- 		</p>
+		<input type="email" name="email" placeholder="Email" value="<?= $email?>">
+		<?php if($error && !$email):?>
+			<span>Cambie su email</span>
+		<?php endif; ?>
 
-		<p>
- 			<label for="imagen">Imagen</label>
- 			<input type="file" name="imagen">
- 			<?php if($error && !$existeFile):?>
- 				<span>Cambie su imagen</span>
- 			<?php endif; ?>
- 		</p>
+		<input type="password" placeholder="Contraseña" name="password">
+		<?php if($error && !$password):?>
+			<span>Ingrese su password</span>
+		<?php endif; ?>
 
- 		<p>
- 			<label for="password">Ingrese su Password para confirmar</label>
- 			<input type="password" name="password">
- 			<?php if($error && !$password):?>
- 				<span>Ingrese su password</span>
- 			<?php endif; ?>
- 		</p>
+		<label for="imagen" >Insertar imagen:</label>
+		<input type="file" name="imagen">
+		<?php if($error && !$existeFile):?>
+			<span>Cambie su imagen</span>
+		<?php endif; ?>
 
-
- 		<p>
- 			<input type="submit" name="submit">
- 		</p>
+		<input type="submit" name="submit">
 
  	</form>
 </div>

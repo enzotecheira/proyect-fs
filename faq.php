@@ -29,7 +29,7 @@ include('funciones.php');
             <div class="usuarioHeader">
     					<a href="perfil.php">
     						<label>
-    							<img src="<?= $usuario['imagen']?>" > <br> <?= $usuario['usuario']?>
+    							<img src="<?= $usuario['imagen']?>" > <?= $usuario['usuario']?>
     						</label>
     					</a>
     				</div>

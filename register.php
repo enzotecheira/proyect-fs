@@ -89,7 +89,7 @@
 
 					<?php if($error && !$usuario):?>
 						<input style="background-color:red" type="text" name="usuario" placeholder="* Ingrese un usuario" value="<?=$usuario?>">
-						<?php else: ?>
+					<?php else: ?>
 						<input type="text" name="usuario" placeholder="Usuario" value="<?=$usuario?>">
 					<?php endif; ?>
 
@@ -97,8 +97,8 @@
 
 					<?php if($error && !$nombre):?>
 						<input style="background-color:red" type="text" name="nombre" placeholder="* Ingrese su nombre" value="<?=$nombre?>">
-						<?php else: ?>
-					<input type="text" name="nombre" placeholder="Nombre completo" value="<?=$nombre?>">
+					<?php else: ?>
+						<input type="text" name="nombre" placeholder="Nombre completo" value="<?=$nombre?>">
 					<?php endif; ?>
 
 <!-- Email Input -->
@@ -130,9 +130,9 @@
 <!-- Imagen Input -->
 
 					<?php if($error && !$existeFile):?> <!--validacion de Insertar imagen-->
-							<label for="imagen" style="color:red" >* Insertar imagen:</label>
-						<?php else: ?>
-							<label for="imagen" >Insertar imagen:</label>
+						<label for="imagen" style="color:red" >* Insertar imagen:</label>
+					<?php else: ?>
+						<label for="imagen" >Insertar imagen:</label>
 					<?php endif; ?>
 					<input type="file" name="imagen">
 

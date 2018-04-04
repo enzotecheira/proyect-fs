@@ -15,6 +15,14 @@
             "password": "$2y$10$.4SBJ35y.watoWcbB\/ANJutNm8KX.SDQws1vBCLZfFvINl0QdeXUO",
             "id": 2,
             "imagen": ".\/archivos\/imagen_1522472521.png"
+        },
+        {
+            "usuario": "kobrador",
+            "nombre": "Jorge Reyes",
+            "email": "kobrador@netscape.net",
+            "password": "$2y$10$yoPZpyLF1AqH419o3N23pu7qv6D8HOX.orF8e1ho897K.NOWzBs8.",
+            "id": 3,
+            "imagen": ".\/archivos\/imagen_1522722429.png"
         }
     ]
 }

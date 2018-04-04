@@ -9,7 +9,7 @@
 	}
 
 	$email = dameValorDeParametro('email',$_POST);
-  $codigo= dameValorDeParametro('codigo',$_POST,rand(1,50000));
+	$codigo= dameValorDeParametro('codigo',$_POST,rand(1,50000));
 	$password = dameValorDeParametro('password',$_POST);
 	$password2 = dameValorDeParametro('password2',$_POST);
 	$codigoIngresadoPorUsuario= dameValorDeParametro('codigoIngresadoPorUsuario',$_POST);
@@ -45,7 +45,7 @@
 			$error = true;
 		}
 	}
-echo "$codigo";
+//echo "$codigo";
 ?>
 
 <!DOCTYPE html>

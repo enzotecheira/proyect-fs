@@ -89,7 +89,7 @@
 		    border: none;
 		    margin-right: 10px;
 
-			//font-family: 'Montserrat', sans-serif;
+			/*font-family: 'Montserrat', sans-serif;*/
 		    font-size:2em;
 		    text-align: center;
 		    text-transform: uppercase;
@@ -146,7 +146,7 @@
 			border-radius: 8px 0 0 8px;
 			padding: 0 10px;
 
-			//font-family: 'Montserrat', sans-serif;
+			/*font-family: 'Montserrat', sans-serif;*/
 			font-size: 2.5em;
 		}
 		#banner form .lupa {
@@ -166,8 +166,6 @@
 		    box-shadow: 0 0 20px 1px rgba(0,0,0,0.4);
 		    border-radius: 5px;
 		    border: none;
-
-			//font-family: 'Montserrat', sans-serif;
 		    font-size:1.3em;
 		    text-align: center;
 		}
@@ -278,7 +276,7 @@
 		flex-direction: column;
 		justify-content:space-between;
 		background-color: rgba(0,0,0,0.5);
-		//height: 150vh;
+		/*height: 150vh;*/
 		z-index: 1;
 	}
 	.registro {
@@ -315,8 +313,6 @@
 		border: none;
 		border-bottom: 1px solid #999;
 		outline: none;
-
-		//font-family: 'Montserrat', sans-serif;
 		font-size: 1.5em;
 	}
 	.registro form input:hover {
@@ -341,9 +337,6 @@
 	}
 	.registro form button:hover {
 		background-color: #34afff;
-	}
-	.registro form p,a {
-		//font-size: 0.5em;
 	}
 
 	.login-btn {
@@ -388,7 +381,7 @@
 		flex-direction: column;
 		justify-content:space-between;
 		background-color: rgba(0,0,0,0.5);
-		height: 110vh;
+		//height: 110vh;
 		z-index: 1;
 	}
 	.login {
@@ -422,8 +415,6 @@
 		border: none;
 		border-bottom: 1px solid #999;
 		outline: none;
-
-		//font-family: 'Montserrat', sans-serif;
 		font-size: 1.5em;
 	}
 	.login form input:hover {
@@ -711,7 +702,6 @@
 		}
 		.transparent {
 			background-color: rgba(0,0,0,0.5);
-			//height: 200vh;
 			z-index: 1;
 		}
 		.registro {
@@ -747,7 +737,7 @@
 		}
 		.transparentLog {
 			background-color: rgba(0,0,0,0.5);
-			height: 150vh;
+			//height: 150vh;
 			z-index: 1;
 		}
 		.login {
@@ -986,8 +976,6 @@
 			border: none;
 			border-bottom: 1px solid #999;
 			outline: none;
-
-			//font-family: 'Montserrat', sans-serif;
 			font-size: 0.4em;
 		}
 		.registro form input:hover {

@@ -63,7 +63,6 @@
 /*--INDEX--*/
 	/*HEADER*/
 		header {
-			/* width: 100vw; */
 			background-color: #e74c3c;
 			display: flex;
 			justify-content: space-between;
@@ -88,20 +87,13 @@
 		    border-radius: 5px;
 		    border: none;
 		    margin-right: 10px;
-
-			/*font-family: 'Montserrat', sans-serif;*/
 		    font-size:2em;
 		    text-align: center;
 		    text-transform: uppercase;
 		}
-		/*header a {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-		}*/
 		.usuarioHeader{
 			max-width: 10vw;
-			font-size: 0.5em;
+			font-size: .8em;
 			margin-right: 5vw;
 		}
 		.usuarioHeader img{
@@ -138,15 +130,14 @@
 		#banner form .search {
 			display: flex;
 			align-items: center;
+			justify-content: center;
 		}
 		#banner form .search input{
-			width: 270px;
+			width: 80%;
 			height: 50px;
 			border: none;
 			border-radius: 8px 0 0 8px;
-			padding: 0 10px;
-
-			/*font-family: 'Montserrat', sans-serif;*/
+			padding: 0 5px;
 			font-size: 2.5em;
 		}
 		#banner form .lupa {
@@ -155,7 +146,6 @@
 			border: none;
 			border-radius: 0 8px 8px 0;
 			padding: 0 10px;
-
 			font-size: 2em;
 			color: white;
 		}
@@ -265,218 +255,123 @@
 	/*FIN FOOTER*/
 /*--INDEX END*/
 
-/*--REGISTER--*/
-	.containerReg {
-		background-image: url(../images/cityLogin.jpg);
-		background-size: cover;
-		background-position: center;
-	}
-	.transparent {
-		display: flex;
-		flex-direction: column;
-		justify-content:space-between;
-		background-color: rgba(0,0,0,0.5);
-		/*height: 150vh;*/
-		z-index: 1;
-	}
-	.registro {
-		width: 95%;
-		border-radius: 10px;
-		margin: 0 auto;
-		box-shadow: 0 0 15px 1px rgba(0,0,0,0.6);
-		padding: 20px 0;
-		margin: 40px auto;
-		background-color: #fff;
-		display: flex;
-		align-items: center;
-		flex-direction: column;
-	}
-	.registro h1 {
-		font-size: 4em;
-		text-decoration: underline;
-		font-weight: bold;
-		margin-bottom: 20px;
-	}
-	.registro form {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-	}
+.containerCity {
+	background-image: url(../images/cityLogin.jpg);
+	background-size: cover;
+	background-position: center;
+}
 
-	.registro form input {
-		width: 80%;
-		height: 30px;
-		padding: 2px;
-		margin: 8px 0;
-		text-align: center;
-		border: none;
-		border-bottom: 1px solid #999;
-		outline: none;
-		font-size: 1.5em;
-	}
-	.registro form input:hover {
-		box-shadow: 0px 1.5px 0px -1px #3498db;
-	}
-	.registro form label {
-		font-size: 1.5em;
-	}
-	.registro form button {
-		width: 80%;
-		padding: 5px 10px;
-		background-color: #e74c3c;
-		border: none;
-		box-shadow: 2px 2px 2px #111;
-		margin: 10px 0;
-		margin-top: 35px;
+.containerForm {
+	width: 90%;
+	border-radius: 10px;
+	margin: 0 auto;
+	box-shadow: 0 0 15px 1px rgba(0,0,0,0.6);
+	padding: 20px 0;
+	margin: 40px auto;
+	background-color: #fff;
+}
 
-		font-weight: bold;
-		font-size: 1.8em;
-		text-shadow: 1px 1px rgba(0,0,0,0.4);
-		color: white;
-	}
-	.registro form button:hover {
-		background-color: #34afff;
-	}
+.containerForm form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
 
-	.login-btn {
-		width: 100px;
-		background-color: #f39c12;
-		border: none;
-		padding: 5px 10px;
-		margin-top: 10px;
-		position: absolute;
-		left: 50%;
-		transform: translateX(-50%);
-		box-shadow: 2px 2px 2px #111;
-	}
-	.login-btn:active {
-		box-shadow: 1px 1px 1px #000;
-	}
+.containerForm form input[type="text"],input[type="email"],input[type="password"] {
+	width: 90%;
+	height: 30px;
+	padding: 2px;
+	margin: 8px 0;
+	text-align: center;
+	border: none;
+	border-bottom: 1px solid #999;
+	outline: none;
+	font-size: 1.5em;
+}
 
-	a .login-btn {
-		color: white;
-		text-decoration: none;
-		font-weight: bold;
-		text-shadow: 1px 1px rgba(0,0,0,0.4);
-	}
+.containerForm h1 {
+	font-size: 3em;
+	text-decoration: underline;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
 
-	/*form button:hover {
-		background-color: #2980b9;
-	}*/
+.containerForm form p {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.5em;
+}
 
-	form button:active {
-		box-shadow: 1px 1px 1px #000;
-	}
-/*--REGISTER END--*/
+.containerForm form input:hover {
+	box-shadow: 0px 1.5px 0px -1px #3498db;
+}
 
-/*--LOGIN--*/
-	.containerLog {
-		background-image: url(../images/cityLogin.jpg);
-		background-size: cover;
-		background-position: center;
-	}
-	.transparentLog {
-		display: flex;
-		flex-direction: column;
-		justify-content:space-between;
-		background-color: rgba(0,0,0,0.5);
-		//height: 110vh;
-		z-index: 1;
-	}
-	.login {
-		width: 300px;
-		border-radius: 10px;
-		margin: 0 auto;
-		box-shadow: 0 0 15px 1px rgba(0,0,0,0.6);
-		padding: 20px 0;
-		margin: 40px auto 10px auto;
-		background-color: #fff;
-	}
-	.login h1 {
-		font-size: 4em;
-		text-decoration: underline;
-		font-weight: bold;
-		margin-bottom: 20px;
-	}
-	.login form {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-	}
+.containerForm form label {
+	font-size: 1.5em;
+}
 
-	.login form input {
-		width: 80%;
-		height: 30px;
-		padding: 2px;
-		margin: 8px 0;
-		text-align: center;
-		border: none;
-		border-bottom: 1px solid #999;
-		outline: none;
-		font-size: 1.5em;
-	}
-	.login form input:hover {
-		box-shadow: 0px 1.5px 0px -1px #3498db;
-	}
-	.login form label {
-		font-size: 1.5em;
-	}
+.containerForm form button {
+	width: 80%;
+	padding: 5px 10px;
+	background-color: #e74c3c;
+	border: none;
+	box-shadow: 2px 2px 2px #111;
+	margin: 10px 0;
+	margin-top: 35px;
+	font-weight: bold;
+	font-size: 1.8em;
+	text-shadow: 1px 1px rgba(0,0,0,0.4);
+	color: white;
+}
+.containerForm form button:hover {
+	background-color: #34afff;
+}
 
-	.login form button {
-		width: 80%;
-		padding: 5px 10px;
-		background-color: #e74c3c;
-		border: none;
-		box-shadow: 2px 2px 2px #111;
-		margin: 10px 0;
-		margin-top: 35px;
+form button:active {
+	box-shadow: 1px 1px 1px #000;
+}
 
-		font-weight: bold;
-		font-size: 1.8em;
-		text-shadow: 1px 1px rgba(0,0,0,0.4);
-		color: white;
-	}
-	.login form button:hover {
-		background-color: #34afff;
-	}
+.transparent {
+	display: flex;
+	flex-direction: column;
+	justify-content:space-between;
+	background-color: rgba(0,0,0,0.5);
+	z-index: 1;
+}
 
-	.login-btn {
-		width: 100px;
-		background-color: #f39c12;
-		border: none;
-		padding: 5px 10px;
-		margin-top: 10px;
-		position: absolute;
-		left: 50%;
-		transform: translateX(-50%);
-		box-shadow: 2px 2px 2px #111;
-	}
-	.login-btn:hover {
-		background-color: #f1c40f;
-	}
-	.login-btn:active {
-		box-shadow: 1px 1px 1px #000;
-	}
+.login-btn {
+	width: 100px;
+	background-color: #f39c12;
+	border: none;
+	padding: 5px 10px;
+	margin-top: 10px;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	box-shadow: 2px 2px 2px #111;
+}
+.login-btn:active {
+	box-shadow: 1px 1px 1px #000;
+}
 
-	a .login-btn {
-		color: white;
-		text-decoration: none;
-		font-weight: bold;
-		text-shadow: 1px 1px rgba(0,0,0,0.4);
-	}
-	form button:active {
-		box-shadow: 1px 1px 1px #000;
-	}
-	.recordarme{
-		text-align: center;
-		-ms-transform: scale(0.5); /* IE */
-  	-moz-transform: scale(0.5); /* FF */
-  	-webkit-transform: scale(0.5); /* Safari and Chrome */
-  	-o-transform: scale(0.5); /* Opera */
+a .login-btn {
+	color: white;
+	text-decoration: none;
+	font-weight: bold;
+	text-shadow: 1px 1px rgba(0,0,0,0.4);
+}
 
-	}
+.login-btn:hover {
+	background-color: #f1c40f;
+}
+
+.recordarme{
+	-ms-transform: scale(0.7); /* IE */
+	-moz-transform: scale(0.7); /* FF */
+	-webkit-transform: scale(0.7); /* Safari and Chrome */
+	-o-transform: scale(0.7); /* Opera */
+
+}
 
 	.containerLog p {
 		font-size: 1.5em;
@@ -491,58 +386,7 @@
 	.containerLog p a:hover {
 		color: blue;
 	}
-	/*FOOTER*/
-		#footer #parallax {
-			width: 100%;
-			height: 300px;
-			background-image: url(../images/city-glasses.jpg);
-			background-attachment: fixed;
-			background-size: cover;
-			background-position: center;
-		}
-		#footer #footerLog-board {
-			width: 100vw;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-
-			padding: 15px 0;
-			background-color: #666;
-		}
-		#footer #footerLog-board .logo {
-			color: white;
-			border: solid 3px #fff;
-			padding: 5px 10px;
-			font-size: 3em;
-			margin-bottom: 30px;
-		}
-		#footer #footerLog-board ul {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-		}
-		#footer #footerLog-board ul li {
-			text-align: center;
-			margin: 5px 0;
-
-		}
-		#footer #footerLog-board ul li a {
-			font-size: 2em;
-			color: white;
-		}
-		#footer #footerLog-board ul li a:hover {
-			text-shadow: 2px 2px 2px rgba(0,0,0,0.3);
-		}
-	/*FIN FOOTER*/
-/*--LOGIN END--*/
 /*-----FAQ-----*/
-.containerFaq {
-	background-image: url(../images/cityLogin.jpg);
-	background-size: cover;
-	background-position: center;
-}
 .transparentFaq {
 	width: 100vw;
 	display: flex;
@@ -556,7 +400,7 @@
 	.preguntas{
 		margin-top: 2vh;
 		margin-bottom: 6vh;
-		width: 80vw;
+		width: 90vw;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -571,7 +415,7 @@
 	.preguntas h1{
 		text-align: center;
 		font-weight: bold;
-		font-size: 1.5em;
+		font-size: 3em;
 		margin-top: 2vh;
 		color: black;
 	}
@@ -592,193 +436,170 @@
 	.headerFaq {
 		width: 100vw;
 	}
+
+	.footerFaq {
+		width: 100vw;
+	}
 /*-----FAQ END-----*/
 
-
-
-
-
-/*---------------MEDIA QUERIES---------------*/
-
 @media (min-width: 768px){ /* TABLET */
+/*--INDEX--*/
+	/*HEADER*/
 
-	/*--INDEX--*/
-		/*HEADER*/
-			header .logo {
-				margin-left: 30px;
-				font-size: 1.2em;
-			}
+	header .logo {
+		margin-left: 30px;
+		font-size: 1.2em;
+	}
 
-			header a button {
-			    padding: 5px 15px;
-			    margin-right: 30px;
+	header a button {
+		padding: 5px 15px;
+		margin-right: 30px;
+		font-size:1em;
+	}
+	.usuarioHeader{
+		max-width: 6vw;
+	}
+	.usuarioHeader img{
+		width: 6vw;
+	}
+/*FIN HEADER*/
 
-			    font-size:1em;
-			}
-			.usuarioHeader{
-				max-width: 6vw;
-			}
-			.usuarioHeader img{
-				width: 6vw;
-			}
-	
-		/*FIN HEADER*/
+/*BANNER*/
+	#banner {
+		height: 85vh;
+	}
 
-		/*BANNER*/
-			#banner {
-				height: 85vh;
-			}
-			#banner form .line {
-				margin: 15px 0;
-			}
-			#banner form .searchOptions {
-				font-size: 1.8em;
-			}
-			#banner form .search input{
-				width: 550px;
-				height: 60px;
-				border-radius: 10px 0 0 10px;
-				padding: 0 20px;
+	#banner form .line {
+		margin: 10px 0;
+	}
+	#banner form .searchOptions {
+		font-size: 1.8em;
+	}
+	#banner form .search input{
+		width: 80%;
+		height: 60px;
+		border-radius: 10px 0 0 10px;
+		padding: 0 20px;
+		font-size: 1.2em;
+	}
+	#banner form .lupa {
+		height: 60px;
+		border-radius: 0 10px 10px 0;
+		padding: 0 15px;
+		font-size: 1.5em;
+	}
+	#banner form .busquedaAvanzada {
+		padding: 5px 20px;
+		border-radius: 8px;
+		font-size:1em;
+	}
+/*FIN BANNER*/
 
-				font-size: 1.2em;
-			}
-			#banner form .lupa {
-				height: 60px;
-				border-radius: 0 10px 10px 0;
-				padding: 0 15px;
+/*CONTENT*/
+	#content h1 {
+		font-size: 2.5em;
+		margin: 100px 0;
+	}
+	#content ul li {
+		margin: 200px 0;
+	}
+	#content .circle {
+		width: 300px;
+		height: 300px;
+		border-radius: 150px;
+		margin-bottom: 30px;
+	}
+	#content ul li p {
+		font-size: 1.5em;
+		margin: 0 50px;
+	}
+/*FIN CONTENT*/
 
-				font-size: 1.5em;
-			}
-			#banner form .busquedaAvanzada {
-			    padding: 5px 20px;
-			    box-shadow: 0 0 20px 1px rgba(0,0,0,0.4);
-			    border-radius: 8px;
+/*FOOTER*/
+	#footer #parallax {
+		height: 400px;
+	}
+	#footer #footer-board .logo {
+		font-size: 2em;
+	}
+#footer #footer-board ul li a {
+		font-size: 1em;
+	}
+/*FIN FOOTER*/
+/*--INDEX END*/
 
-			    font-size:1em;
-			}
-		/*FIN BANNER*/
+	.containerForm {
+	width: 70%;
+	border-radius: 10px;
+	padding: 20px 0;
+	margin: 40px auto;
+	}
 
-		/*CONTENT*/
-			#content h1 {
-				font-size: 2.5em;
-				margin: 100px 0;
-			}
-			#content ul li {
-				margin: 200px 0;
-			}
-				/*#content ul li:first-child {
-					margin-top: 0;
-				}
-				#content ul li:last-child {
-					margin-bottom: 0;
-				}*/
-			#content .circle {
-				width: 300px;
-				height: 300px;
-				border-radius: 150px;
-				margin-bottom: 30px;
-			}
-			#content ul li p {
-				font-size: 1.5em;
-				margin: 0 100px;
-			}
-		/*FIN CONTENT*/
+	.containerForm form input[type="text"],input[type="email"],input[type="password"] {
+	width: 90%;
+	/*height: 45px;*/
+	font-size: 1em;
+	}
 
-		/*FOOTER*/
-			#footer #parallax {
-				height: 400px;
-			}
-			#footer #footer-board ul li a {
-				font-size: 1.5em;
-			}
-		/*FIN FOOTER*/
-	/*--INDEX END*/
+	.containerForm h1 {
+	font-size: 1.8em;
+	margin-bottom: 20px;
+	}
 
-	/*--REGISTER--*/
-		.containerReg {
-			background-image: url(../images/cityLogin.jpg);
-			background-size: cover;
-			background-position: center;
-		}
-		.transparent {
-			background-color: rgba(0,0,0,0.5);
-			z-index: 1;
-		}
-		.registro {
-			width: 75%;
-		}
-		.registro h1 {
-			font-size: 1.8em;
-			margin-bottom: 30px;
-		}
-		.registro form input {
-			width: 70%;
-			height: 40px;
-			padding: 2px;
-			font-size: 1em;
-		}
-		.registro form label {
-			font-size: 1em;
-		}
+	.containerForm form p {
+	font-size: 1em;
+	}
 
-		.registro form button {
-			width: 60%;
-			padding: 5px 10px;
-			margin-top: 35px;
-			font-size: 1em;
-		}
-		/*--REGISTER END--*/
+	.containerForm form label {
+	font-size: 1em;
+	}
 
-	/*--LOGIN--*/
-		.containerLog {
-			background-image: url(../images/cityLogin.jpg);
-			background-size: cover;
-			background-position: center;
-		}
-		.transparentLog {
-			background-color: rgba(0,0,0,0.5);
-			//height: 150vh;
-			z-index: 1;
-		}
-		.login {
-			width: 500px;
-		}
-		.login h1 {
-			font-size: 1.8em;
-			margin-bottom: 30px;
-		}
-		.login form input {
-			width: 70%;
-			height: 40px;
-			padding: 2px;
-			font-size: 1em;
-		}
-		.login form label {
-			font-size: 1em;
-		}
+	.containerForm form button {
+	width: 80%;
+	font-size: 1em;
+	}
+	.containerForm form button:hover {
+	background-color: #34afff;
+	}
 
-		.login form button {
-			width: 60%;
-			padding: 5px 10px;
-			margin-top: 35px;
-			font-size: 1em;
-		}
-		.containerLog p {
-			font-size: 1em;
+	form button:active {
+	box-shadow: 1px 1px 1px #000;
+	}
 
-			margin-bottom: 40px;
-		}
-		/*FOOTER*/
-			#footer #parallax {
-				height: 400px;
-			}
-			#footer #footerLog-board ul li a {
-				font-size: 1.5em;
-			}
-		/*FIN FOOTER*/
-	/*--LOGIN END--*/
+	.login-btn {
+	width: 100px;
+	}
 
-/*-----FAQ-----*/
+	.recordarme{
+	-ms-transform: scale(0.7); /* IE */
+	-moz-transform: scale(0.7); /* FF */
+	-webkit-transform: scale(0.7); /* Safari and Chrome */
+	-o-transform: scale(0.7); /* Opera */
+
+	}
+
+	.containerLog p {
+		font-size: 1em;
+
+		margin-bottom: 40px;
+	}
+	.containerLog p a {
+		color: white;
+	}
+	.containerLog p a:hover {
+		color: blue;
+	}
+	/*-----FAQ-----*/
+	.transparentFaq {
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content:space-between;
+	background-color: rgba(0,0,0,0.5);
+	background-repeat: repeat-x;
+	z-index: 1;
+	}
 	.preguntas{
 		width: 90vw;
 		display: flex;
@@ -790,7 +611,7 @@
 		width: 46%;
 		margin:1%;
 		border-style: solid;
-    border-width: 2px;
+    	border-width: 2px;
 		border-color: #ae9b2c;
 		border-radius: 5px;
 		background-color: #FFF9E9
@@ -802,294 +623,129 @@
 		margin-bottom: 6vh;
 		width: 100%;
 	}
+	
+	
+	.preguntas h1{
+		font-size: 2em;
+		margin-top: 2vh;
+	}
+	.preguntas h2{
+		font-size: 1.3em;
+		margin: 2vh 0 2vh 0;
+	}
+	.headerFaq {
+		width: 100vw;
+	}
+
+	.footerFaq {
+		width: 100vw;
+	}
 	/*-----FAQ END-----*/
+
+
 }
 
 @media (min-width: 960px){ /* DESKTOP */
-	/* --INDEX-- */
-		/*HEADER*/
-			header .logo {
-				margin-left: 40px;
-				font-size: 0.9em;
-			}
+	body{
+		font-size:16px;
+	}
+	.usuarioHeader{
+		max-width: 10vw;
+		font-size: .8em;
+		margin-right: 5vw;
+	}
 
-			header a button {
-			    border-radius: 10px;
-			    padding: 10px 20px;
-			    margin-right: 40px;
-
-			    font-size:0.5em;
-			}
-			header a button:hover {
-				background-color: #f39c12;
-				text-shadow: 2px 2px 2px rgba(0,0,0,0.3);
-			}
-			.usuarioHeader{
-				max-width: 4vw;
-			}
-			.usuarioHeader img{
-				width: 4vw;
-			}
-		/*FIN HEADER*/
-
-		/*BANNER*/
-			#banner {
-				height: 88vh;
-			}
-
-			#banner form .line {
-				margin: 10px 0;
-			}
-			#banner form .searchOptions {
-				font-size: 1em;
-			}
-			#banner form .search input{
-				width: 900px;
-				height: 70px;
-				padding: 0 15px;
-
-				font-size: 0.7em;
-			}
-				#banner form .search input:hover {
-					box-shadow: 0 0 10px 0px #666;
-				}
-			#banner form .lupa {
-				height: 70px;
-				padding: 0 20px;
-
-				font-size: 0.8em;
-			}
-				#banner form .lupa:hover {
-					background-color: #f39c12;
-				}
-			#banner form .busquedaAvanzada {
-			    font-size:0.6em;
-			}
-				#banner form .busquedaAvanzada:hover {
-					background-color: #f39c12;
-				}
-		/*FIN BANNER*/
-
-		/*CONTENT*/
-			#content h1 {
-				font-size: 2em;
-				margin: 150px 0;
-			}
-			#content ul li {
-				margin: 300px 0;
-			}
-				/*#content ul li:first-child {
-					margin-top: 0;
-				}
-				#content ul li:last-child {
-					margin-bottom: 0;
-				}*/
-			#content .circle {
-				width: 400px;
-				height: 400px;
-				border-radius: 200px;
-				margin-bottom: 30px;
-			}
-			#content .circle img {
-				width: 60%;
-			}
-			#content ul li p {
-				font-size: 1em;
-				text-align: center;
-				margin: 0 400px;
-			}
-		/*FIN CONTENT*/
-
-		/*FOOTER*/
-			#footer #parallax {
-				width: 100%;
-				height: 300px;
-				background-image: url(../images/city-glasses.jpg);
-				background-attachment: fixed;
-				background-size: cover;
-				background-position: center;
-			}
-			#footer #footer-board {
-				display: flex;
-				flex-direction: row;
-				justify-content: space-around;
-				align-items: center;
-
-				padding: 15px 0;
-				background-color: #666;
-			}
-			#footer #footer-board .logo {
-				color: white;
-				border: solid 3px #fff;
-				padding: 5px 10px;
-				font-size: 0.5em;
-				margin: 0;
-			}
-			#footer #footer-board ul {
-				display: flex;
-				flex-direction: row;
-				justify-content: center;
-				align-items: center;
-			}
-			#footer #footer-board ul li {
-				text-align: center;
-				padding: 0 ;
-				margin: 0 20px;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-
-			}
-			#footer #footer-board ul li a {
-				font-size: 0.4em;
-				color: white;
-			}
-		/*FIN FOOTER*/
-	/* --INDEX END-- */
-
-	/*--REGISTER--*/
-		.containerReg {
-			background-image: url(../images/cityLogin.jpg);
-			background-size: contain;
-			background-position: center;
-			height: 100vh;
+	/*CONTENT*/
+	#content h1 {
+		font-size: 3em;
+		font-weight: bold;
+		text-align: center;
+		margin: 50px 0;
+	}
+	#content ul  {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		margin: 150px 0;
+	}
+	#content ul li {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 50%;
+		margin: 150px 0;
+	}
+		/*#content ul li:first-child {
+			margin-top: 0;
 		}
-		.transparent {
-			background-color: rgba(0,0,0,0.5);
-			height: 100vh;
-			z-index: 1;
-		}
-		.registro {
-			width: 60%;
-			overflow: hidden;
-		}
-		.registro h1 {
-			font-size: 0.8em;
-			margin-bottom: 30px;
-		}
-		.registro form input {
-			width: 80%;
-			height: 30px;
-			padding: 2px;
-			margin: 8px 0;
-			text-align: center;
-			border: none;
-			border-bottom: 1px solid #999;
-			outline: none;
-			font-size: 0.4em;
-		}
-		.registro form input:hover {
-			box-shadow: 0px 1.5px 0px -1px #3498db;
-		}
-		.registro form label {
-			font-size: 0.4em;
-		}
+		#content ul li:last-child {
+			margin-bottom: 0;
+		}*/
+	#content .circle {
+		width: 200px;
+		height: 200px;
+		border-radius: 100px;
+		margin-bottom: 10px;
+		box-shadow: 0 0 20px 2px rgba(0,0,0,0.4);
 
-		.registro form button {
-			width: 80%;
-			padding: 5px 10px;
-			margin: 10px 0;
-			margin-top: 20px;
-			font-size: 0.4em;
-		}
-		.registro form button:hover {
-			background-color: #c0392b;
-		}
-		.registro form button:active {
-			box-shadow: 1px 1px 1px #000;
-		}
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	#content .circle img {
+		width: 60%;
+	}
+	#content ul li p {
+		font-size: 1.5em;
+		text-align: center;
+		margin: 0 20px;
+	}
+
+	.transparent {
+		background-color: rgba(0,0,0,0.5);
+		height: 100vh;
+		z-index: 1;
+	}
+	.containerForm {
+		width: 50%;
+		margin:10px auto;
+	}
 	
-	/*--REGISTER END--*/
+	#footer #footer-board {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		align-items: center;
 
-	/*--LOGIN--*/
-		.containerLog {
-			height: 100vh;
-		}
-		.transparentLog {
-			height: 100vh;
-			z-index: 1;
-		}
-		.login {
-			width: 300px;
-		}
-		.login h1 {
-			font-size: 0.8em;
-			margin-bottom: 30px;
-		}
-		.login form input {
-			width: 80%;
-			height: 30px;
-			padding: 2px;
-			margin: 8px 0;
+		padding: 15px 0;
+	}
+	#footer #footer-board ul {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+	}
+	#footer #footer-board .logo {
+		padding: 5px 10px;
+		font-size: 1em;
+		margin: 0;
+	}
+	#footer #footer-board ul li {
+		text-align: center;
+		padding: 0 ;
+		margin: 0 20px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 
-			font-size: 0.4em;
-		}
-		.login form label {
-			font-size: 0.4em;
-		}
-
-		.login form button {
-			width: 80%;
-			padding: 5px 10px;
-			margin: 10px 0;
-			margin-top: 20px;
-			font-size: 0.4em;
-		}
-		.login form button:hover {
-			background-color: #c0392b;
-		}
-		.login form button:active {
-			box-shadow: 1px 1px 1px #000;
-		}
-		.containerLog p {
-			font-size: 0.3em;
-
-			margin-bottom: 40px;
-		}
-		/*FOOTER*/
-			#footer #parallax {
-				width: 100%;
-				height: 300px;
-			}
-			#footer #footerLog-board {
-				display: flex;
-				flex-direction: row;
-				justify-content: space-around;
-				align-items: center;
-				/* position: absolute;
-				bottom: 0px; */
-				width: 100vw;
-				padding: 15px 0;
-				background-color: #666;
-			}
-			#footer #footerLog-board .logo {
-				color: white;
-				border: solid 3px #fff;
-				padding: 5px 10px;
-				font-size: 0.5em;
-				margin: 0;
-			}
-			#footer #footerLog-board ul {
-				display: flex;
-				flex-direction: row;
-				justify-content: center;
-				align-items: center;
-			}
-			#footer #footerLog-board ul li {
-				text-align: center;
-				padding: 0 ;
-				margin: 0 20px;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-
-			}
-			#footer #footerLog-board ul li a {
-				font-size: 0.4em;
-				color: white;
-			}
-		/*FIN FOOTER*/
-	/*--LOGIN END--*/
+	}
+	#footer #footer-board ul li a {
+		font-size: 1em;
+	}
 
 
-}
+}	

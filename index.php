@@ -7,7 +7,7 @@ include('funciones.php');
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Avecino</title>
+	<title>Avecino - Home</title>
 
 	<!-- Metas -->
 	<meta charset="utf-8">
@@ -81,7 +81,7 @@ include('funciones.php');
 				</li>
 				<li>
 					<div class="circle yellowOne"><img src="./images/transfer.png"></div>
-					<p>Recibi los pagos de tus propiedades desde la comodidad de tu casa</p>
+					<p>Recibí los pagos de tus propiedades desde la comodidad de tu casa</p>
 				</li>
 			</ul>
 		</div>

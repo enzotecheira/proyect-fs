@@ -53,7 +53,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Registro</title>
+	<title>Avecino - Registro</title>
 
 	<!-- Metas -->
 	<meta charset="utf-8">
@@ -66,7 +66,7 @@
 	<link rel="stylesheet" href="css/pruebaStyles.css">
 </head>
 <body>
-	<div class="containerReg">
+	<div class="containerCity containerReg">
 		<div class="transparent">
 <!-- HEADER -->
 			<header>
@@ -76,8 +76,8 @@
 <!-- HEADER END -->
 
 <!-- CONTENT -->
-				<div class="registro">
-					<form method="post" enctype="multipart/form-data">
+			<div class="containerForm registro">
+				<form method="post" enctype="multipart/form-data">
 
 					<h1>Registro</h1>
 

@@ -51,7 +51,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Renová tu contraseña</title>
+	<title>Avecino - Renová tu contraseña</title>
 
 	<!-- Metas -->
 	<meta charset="utf-8">
@@ -64,8 +64,8 @@
 	<link rel="stylesheet" href="css/pruebaStyles.css">
 </head>
 <body>
-	<div class="containerLog">
-		<div class="transparentLog">
+	<div class="containerCity containerLog">
+		<div class="transparent">
 			<!-- HEADER -->
 			<header>
 				<div class="logo">LOGO</div>
@@ -74,7 +74,7 @@
 			<!-- HEADER END -->
 
 			<!-- CONTENT -->
-				<div class="login">
+				<div class="containerForm login">
 					<form method="post">
 							<h1>Password</h1>
 
@@ -140,7 +140,7 @@
 			<!-- FOOTER -->
 				<div id="footer">
 
-					<div id="footerLog-board">
+					<div id="footer-board">
 						<div class="logo">LOGO</div>
 						<ul>
 							<li><a href="register.php">Registrarse</a></li>

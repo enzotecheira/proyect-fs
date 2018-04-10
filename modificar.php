@@ -57,7 +57,7 @@
  <!DOCTYPE html>
  <html>
  <head>
- 	<title>Modificar Perfil</title>
+ 	<title>Avecino - Modificar Perfil</title>
 
  	<!-- Metas -->
  	<meta charset="utf-8">
@@ -70,7 +70,7 @@
  	<link rel="stylesheet" href="css/pruebaStyles.css">
  </head>
  <body>
- 	<div class="containerReg">
+ 	<div class="containerCity containerReg">
  		<div class="transparent">
 
 <!-- HEADER -->
@@ -91,7 +91,7 @@
 			</header>
 <!-- HEADER END -->
 
-<div class="registro">
+<div class="containerForm registro">
 
 	 <form method="post" enctype="multipart/form-data">
 	 
@@ -131,7 +131,7 @@
 			<span>Cambie su imagen</span>
 		<?php endif; ?>
 
-		<input type="submit" name="submit">
+		<button type="submit" name="submit">Enviar</button>
 
  	</form>
 </div>

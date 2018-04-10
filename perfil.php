@@ -15,7 +15,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Perfil de usuario</title>
+	<title>Avecino - Perfil de usuario</title>
 
 	<!-- Metas -->
 	<meta charset="utf-8">
@@ -28,67 +28,63 @@
 	<link rel="stylesheet" href="css/pruebaStyles.css">
 </head>
 <body>
-	<div class="containerReg">
+	<div class="containerCity">
 		<div class="transparent">
 <!-- HEADER -->
-					<header>
-						<div class="logo">LOGO</div>
-						<?php if (existeParametro('usuario',$_SESSION)): ?>
-							<div class="usuarioHeader">
-								<a href="perfil.php">
-									<label>
-										<img src="<?= $usuario['imagen']?>" > <br> <?= $usuario['usuario']?>
-									</label>
-								</a>
-							</div>
-							<?php else: ?>
-								<a href="login.php"><button id="login-btn">Ingresar</button></a>
-						<?php endif; ?>
+			<header>
+				<div class="logo">LOGO</div>
+				<?php if (existeParametro('usuario',$_SESSION)): ?>
+					<div class="usuarioHeader">
+						<a href="perfil.php">
+						<label>
+							<img src="<?= $usuario['imagen']?>" > <br> <?= $usuario['usuario']?>
+						</label>
+						</a>
+					</div>
+				<?php else: ?>
+					<a href="login.php"><button id="login-btn">Ingresar</button></a>
+				<?php endif; ?>
 
-					</header>
+			</header>
 <!-- HEADER END -->
 
-			<!-- CONTENT -->
-				<div class="registro">
-					<form method="post" enctype="multipart/form-data">
+<!-- CONTENT -->
+			<div class="containerForm login">
+				<form method="post" enctype="multipart/form-data">
+					<h1>Bienvenido</h1>
+					<p><?= $usuario['nombre']?></p>
+					<br>
+					<p>Usuario: <?= $usuario['usuario']?></p>
+					<p>Email: <?= $usuario['email']?></p>
+					<br>
+					<p>
+						<img src="<?= $usuario['imagen']?>" style="max-width: 200px;">
+					</p>
+					<br>
+					<p class="recordarme">
+						<a href="./logout.php">Cerrar sesión</a>
+						|
+						<a href="./modificar.php">Modifica tu perfil</a>
+					</p>
+				</form>
+			</div>
 
-						<h1>Bienvenido <?= $usuario['nombre']?></h1>
-						<br>
-						<p>Usuario: <?= $usuario['usuario']?></p>
-						<p>Email: <?= $usuario['email']?></p>
-						<br>
-						<p>
-							<img src="<?= $usuario['imagen']?>" style="max-width: 200px;">
-						</p>
-						<br>
-						<p class="recordarme">
-							<a href="./logout.php">Cerrar sesión</a>
-							|
-							<a href="./modificar.php">Modifica tu perfil</a>
-						</p>
-					</div>
-
-			<!-- FOOTER -->
-				<div id="footer">
-
-					<div id="footer-board">
-						<div class="logo">LOGO</div>
-						<ul>
-							<li><a href="login.php">Ingresar</a></li>
-							<li><a href="index.php">Inicio</a></li>
-							<li><a href="faq.php">FAQ</a></li>
-							<li><a href="#">Contactar</a></li>
-						</ul>
-					</div>
+<!-- FOOTER -->
+			<div id="footer">
+				<div id="footer-board">
+					<div class="logo">LOGO</div>
+					<ul>
+						<li><a href="login.php">Ingresar</a></li>
+						<li><a href="index.php">Inicio</a></li>
+						<li><a href="faq.php">FAQ</a></li>
+						<li><a href="#">Contactar</a></li>
+					</ul>
 				</div>
-			<!-- FOOTER END -->
-
+			</div>
+<!-- FOOTER END -->
 
 		</div>
 	</div>
-
-
-
 
 </body>
 </html>

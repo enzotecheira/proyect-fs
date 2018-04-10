@@ -15,10 +15,10 @@ include('funciones.php');
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/pruebaStyles.css">
-    <title>FAQ Avecino</title>
+    <title>Avecino - FAQ</title>
   </head>
   <body>
-    <div class="containerFaq">
+    <div class="containerCity containerFaq">
       <div class="transparentFaq">
 
 <!-- HEADER -->
@@ -42,45 +42,45 @@ include('funciones.php');
         <section class="preguntas">
           <h1>Preguntas Frecuentes</h1>
           <div class="pregunta">
-            <h2>Que puedo hacer en el sitio?</h2>
-            <p>Es un sitio dedicado a la compra, venta, alquiler de inmuebles, administracion de los servicion relacionados con el inmueble y antes de comprar o alquilar podes saber que opinan los vecinos sobre el barrio.</p>
+            <h2>¿Qué puedo hacer en el sitio?</h2>
+            <p>Es un sitio dedicado a la compra, venta, alquiler de inmuebles, administración de los servicios relacionados con el inmueble y antes de comprar o alquilar podés saber que opinan los vecinos sobre el barrio.</p>
           </div>
           <div class="pregunta">
-            <h2>Que servicios puedo administrar?</h2>
-            <p>se pueden administrar todos los servicios relacionados con los inmbuebles, por ej sercio de telefonia, internet, luz, agua, gaz, etc.</p>
+            <h2>¿Qué servicios puedo administrar?</h2>
+            <p>Se pueden administrar todos los servicios relacionados con los inmbuebles, por ej servicio de telefonía, internet, luz, agua, gas, etc.</p>
           </div>
           <div class="pregunta">
-            <h2>Puedo realizar una reserva de un inmbueble por la pagina?</h2>
-            <p>si, peudes realizar por medio de nuestra plataforma de pagos, pero antes debes de estar registrado.</p>
+            <h2>¿Puedo realizar una reserva de un inmbueble por la página?</h2>
+            <p>Sí, puedes realizar por medio de nuestra plataforma de pagos, pero antes debes de estar registrado.</p>
           </div>
           <div class="pregunta">
-            <h2>¿como tengo que hacer para publicar un inmueble?</h2>
-            <p>primero debes estar registrado en la plataforma y debes de completar todos los datos requeridos
-              una vez verificados los datos, sera habilitado el usuario.</p>
+            <h2>¿Cómo tengo que hacer para publicar un inmueble?</h2>
+            <p>Primero debes estar registrado en la plataforma y debes de completar todos los datos requeridos.
+              Una vez verificados los datos, será habilitado el usuario.</p>
             </div>
             <div class="pregunta">
               <h2>Clase de Publicaciones</h2>
-              <p>Contamos con 3 opciones de publicaciones, Gratuita, Oro y Platino.</p>
+              <p>Contamos con 3 opciones de publicaciones: Gratuita, Oro y Platino.</p>
             </div>
             <div class="pregunta">
-              <h2>Duracion de las publicaciones</h2>
-              <p>La publicacion Gratuita, tiene una duracion de 30 dias, la oro de 60 dias y la platino de 90 dias.</p>
+              <h2>Duración de las publicaciones</h2>
+              <p>La publicacion Gratuita, tiene una duración de 30 días, la Oro de 60 días y la Platino de 90 días.</p>
             </div>
             <div class="pregunta">
-              <h2>Que diferencia hay entre las publicaciones</h2>
-              <p>Publicaciones Platino tendras maxima explosicion y saldras en las primeras paginas, podras cargar 10 fotos y un video.</p><br>
-              <p>Publicaciones Oro tu aviso sera resaltado y el primer mes expuesto dentro de las 10 primeras paginas, podras cargar 10 fotos.</p><br>
-              <p>Publicacion Gratuita, tendras la opcion de cargar 6 fotos.</p>
+              <h2>¿Qué diferencia hay entre las publicaciones</h2>
+              <p>Publicaciones Platino tendrás máxima exposición y saldrás en las primeras páginas, podrás cargar 10 fotos y un video.</p><br>
+              <p>Publicaciones Oro tu aviso será resaltado y el primer mes expuesto dentro de las 10 primeras páginas, podrás cargar 10 fotos.</p><br>
+              <p>Publicacion Gratuita, tendrás la opción de cargar 6 fotos.</p>
             </div>
             <div class="pregunta">
-              <h2>Costo de publicacion</h2>
-              <p>Publicacion Gratuita 0 costo, publicacion Oro $500 por los 60 dias y publicacion Platino $ 900 por los 90 dias.</p>
+              <h2>Costo de publicación</h2>
+              <p>Publicación Gratuita 0 costo, publicación Oro $500 por los 60 días y publicación Platino $ 900 por los 90 días.</p>
             </div>
           </section>
           <!-- FOOTER -->
-          <div id="footer">
+          <div id="footer" class="footerFaq">
 
-            <div id="footerLog-board">
+            <div id="footer-board">
               <div class="logo">LOGO</div>
               <ul>
                 <li><a href="register.php">Registrarse</a></li>

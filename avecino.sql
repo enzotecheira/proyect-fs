@@ -231,7 +231,7 @@ CREATE  TABLE IF NOT EXISTS `postings` (
   `sold` INT NULL ,
   `rented` INT NULL ,
   `enddate` DATETIME NULL ,
-  `postingscol` VARCHAR(45) NULL ,
+  `` VARCHAR(45) NULL ,
   PRIMARY KEY (`id`) ,
   CONSTRAINT `fk_posting_users`
     FOREIGN KEY (`iduser` )

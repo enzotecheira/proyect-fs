@@ -1,5 +1,6 @@
 <?php
 	include('funciones.php');
+	require './classes/Usuario.php';
 
 	session_start();
 
@@ -28,14 +29,18 @@
 				if ($infoUsuario['existe']) {
 					$error = true;
 				} else{
-					guardarUsuario([
+					/*EN SQL*/
+					$user=new Usuario($usuario, $email, $password, $nombre, guardarArchivoSubido('imagen')); // TODO: Carga imagen
+					$user->save();
+					/*  EN JSON
+						guardarUsuario([
 						'usuario' =>$usuario,
 						'nombre'=>$nombre,
 						'email' => $email,
 						'password' => password_hash($password,PASSWORD_DEFAULT),
 						'id' => $infoUsuario['proximoId']+1,
 						'imagen' => guardarArchivoSubido('imagen')
-					]);
+					]);*/
 					header("Location: login.php");
 					exit;
 				}

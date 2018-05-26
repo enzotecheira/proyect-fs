@@ -19,34 +19,34 @@
 		return $default;
 	}
 
-	function dameInfoUsuarioPorCampo($campo, $valor) {
-		$usuarios = json_decode(file_get_contents('usuarios.json'),true);
-		if (is_null($usuarios)) {
-			$usuarios = ['usuarios' => []];
-		}
-
-		$existe = false;
-		$posicion = null;
-		$usuarioEncontrado = null;
-		$proximoId = 0;
-
-		foreach ($usuarios['usuarios'] as $indice => $usuario) {
-			if ($usuario[$campo] == $valor) {
-				$existe = true;
-				$posicion = $indice;
-				$usuarioEncontrado = $usuario;
-			}
-
-			$proximoId = $proximoId < $usuario['id'] ? $usuario['id']: $proximoId;
-		}
-
-		return [
-			'existe' => $existe,
-			'posicion' => $posicion,
-			'usuario' => $usuarioEncontrado,
-			'proximoId' => $proximoId
-		];
-	}
+	// function dameInfoUsuarioPorCampo($campo, $valor) {
+	// 	$usuarios = json_decode(file_get_contents('usuarios.json'),true);
+	// 	if (is_null($usuarios)) {
+	// 		$usuarios = ['usuarios' => []];
+	// 	}
+	//
+	// 	$existe = false;
+	// 	$posicion = null;
+	// 	$usuarioEncontrado = null;
+	// 	$proximoId = 0;
+	//
+	// 	foreach ($usuarios['usuarios'] as $indice => $usuario) {
+	// 		if ($usuario[$campo] == $valor) {
+	// 			$existe = true;
+	// 			$posicion = $indice;
+	// 			$usuarioEncontrado = $usuario;
+	// 		}
+	//
+	// 		$proximoId = $proximoId < $usuario['id'] ? $usuario['id']: $proximoId;
+	// 	}
+	//
+	// 	return [
+	// 		'existe' => $existe,
+	// 		'posicion' => $posicion,
+	// 		'usuario' => $usuarioEncontrado,
+	// 		'proximoId' => $proximoId
+	// 	];
+	// }
 
 	function guardarArchivoSubido($nombreDelInputFile) {
 		if (array_key_exists($nombreDelInputFile, $_FILES)) {
@@ -73,31 +73,7 @@
 			return $urlFinalConNombreYExtension;
 		}
 	}
-	function esUsuarioUnico($email,$id){
-		$aux=true;
-		$usuarios = json_decode(file_get_contents('usuarios.json'),true);
-		if (is_null($usuarios)) {
-			$usuarios = ['usuarios' => []];
-		}
-		foreach ($usuarios['usuarios'] as $indice => $usuario) {
-			if ($usuario['email']==$email&&$usuario['id']!=$id) {
-				return $aux=false;
-			}
-		}
-		return $aux;
-	}
-
-	function guardarUsuario($usuario) {
-		$usuarios = json_decode(file_get_contents('usuarios.json'),true);
-		if (is_null($usuarios)) {
-			$usuarios = ['usuarios' => []];
-		}
-
-		$usuarios['usuarios'][] = $usuario;
-
-		file_put_contents('usuarios.json', json_encode($usuarios,JSON_PRETTY_PRINT));
-	}
-	function modificarUsuario($usuario, $posicion) {
+	function modificarUsuario($usuario, $posicion) { // EN JSON
 		$usuarios = json_decode(file_get_contents('usuarios.json'),true);
 		if (is_null($usuarios)) {
 			$usuarios = ['usuarios' => []];
@@ -107,7 +83,7 @@
 
 		file_put_contents('usuarios.json', json_encode($usuarios,JSON_PRETTY_PRINT));
 	}
-	function modificarCampoUsuario($valor, $posicionUsuario, $campo) {
+	function modificarCampoUsuario($valor, $posicionUsuario, $campo) { // EN JSON
 		$usuarios = json_decode(file_get_contents('usuarios.json'),true);
 		if (is_null($usuarios)) {
 			$usuarios = ['usuarios' => []];

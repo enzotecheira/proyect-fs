@@ -2,15 +2,17 @@
 	include('funciones.php');
 	require './classes/Usuario.php';
 
+
 	session_start();
+
 
 	if (existeParametro('usuario',$_SESSION)) {
 		header("Location: perfil.php");
 		exit;
 	}
 
-	$usuario = dameValorDeParametro('usuario',$_POST);
-	$nombre = dameValorDeParametro('nombre',$_POST);
+	$usuario = dameValorDeParametro('userName',$_POST);
+	$name = dameValorDeParametro('name',$_POST);
 	$email = dameValorDeParametro('email',$_POST);
 	$password = dameValorDeParametro('password',$_POST);
 	$password2 = dameValorDeParametro('password2',$_POST);
@@ -22,25 +24,18 @@
 	$errorReingresoPassword=false;
 
 
-	if (existeParametro('submit', $_POST)) {
-		if ($nombre && $usuario && $email && $password && $existeFile && $password2) {
+	if (existeParametro('submit', $_POST)) {  // chequea que se haya mandado el submit
+		if ($name && $usuario && $email && $password && $existeFile && $password2) {
 			if ($password==$password2) {
-				$infoUsuario = dameInfoUsuarioPorCampo('email',$email);
-				if ($infoUsuario['existe']) {
+				$infoUsuario = Usuario::find('email',$email);
+				if ($infoUsuario) {
 					$error = true;
 				} else{
-					/*EN SQL*/
-					$user=new Usuario($usuario, $email, $password, $nombre, guardarArchivoSubido('imagen')); // TODO: Carga imagen
-					$user->save();
-					/*  EN JSON
-						guardarUsuario([
-						'usuario' =>$usuario,
-						'nombre'=>$nombre,
-						'email' => $email,
-						'password' => password_hash($password,PASSWORD_DEFAULT),
-						'id' => $infoUsuario['proximoId']+1,
-						'imagen' => guardarArchivoSubido('imagen')
-					]);*/
+					$arrayAGuardar=$_POST; //prepara el el array a guardar
+					$user=new Usuario($arrayAGuardar); //crea objeto usuario
+					$user->setImage(guardarArchivoSubido('imagen'));// guarda archivo y carga la dir en objeto usuario
+					$user->setPassword($password);
+					$user->save(); //guarda usuario
 					header("Location: login.php");
 					exit;
 				}
@@ -86,24 +81,24 @@
 
 					<h1>Registro</h1>
 
-					<?php if($error && array_key_exists('existe', $infoUsuario) && $infoUsuario['existe']): ?>
+					<?php if($error && $infoUsuario): ?>
 						<label style="color:red">Error: el usuario ya existe en la base de datos</label>
 					<?php endif; ?>
 
 <!-- Usuario Input -->
 
 					<?php if($error && !$usuario):?>
-						<input style="background-color:red" type="text" name="usuario" placeholder="* Ingrese un usuario" value="<?=$usuario?>">
+						<input style="background-color:red" type="text" name="userName" placeholder="* Ingrese un usuario" value="<?=$usuario?>">
 					<?php else: ?>
-						<input type="text" name="usuario" placeholder="Usuario" value="<?=$usuario?>">
+						<input type="text" name="userName" placeholder="Usuario" value="<?=$usuario?>">
 					<?php endif; ?>
 
 <!-- Nombre Input -->
 
-					<?php if($error && !$nombre):?>
-						<input style="background-color:red" type="text" name="nombre" placeholder="* Ingrese su nombre" value="<?=$nombre?>">
+					<?php if($error && !$name):?>
+						<input style="background-color:red" type="text" name="name" placeholder="* Ingrese su nombre" value="<?=$name?>">
 					<?php else: ?>
-						<input type="text" name="nombre" placeholder="Nombre completo" value="<?=$nombre?>">
+						<input type="text" name="name" placeholder="Nombre completo" value="<?=$name?>">
 					<?php endif; ?>
 
 <!-- Email Input -->

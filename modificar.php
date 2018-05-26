@@ -1,5 +1,7 @@
 <?php
 	include('funciones.php');
+	require './classes/Usuario.php';
+
   session_start();
   if (!existeParametro('usuario',$_SESSION)) {
 		header("Location: login.php");
@@ -7,32 +9,31 @@
 	}
   $usuario = $_SESSION['usuario'];
 
-	$existeFile = existeFileSinError('imagen');
-	$nombre =array_key_exists('nombre',$_POST)&&$_POST['nombre']?$_POST['nombre']: $usuario['nombre'];
+	$existeFile = existeFileSinError('image');
+	$name =array_key_exists('name',$_POST)&&$_POST['name']?$_POST['name']: $usuario['userName'];
 	$email = array_key_exists('email',$_POST)&&$_POST['email']?$_POST['email']:$usuario['email'];
 	$password = dameValorDeParametro('password',$_POST);
 
 	$infoUsuario = [];
 	$usuarioModificado=[];
+	$errorMailExiste=false;
 
 	$error = false;
 	$passwordError = false;
-
+	$infoUsuario=Usuario::find('id',$usuario['id']);
 	if (existeParametro('submit',$_POST)) {
-		if ($email&&$password&&$nombre&&$existeFile) {
+		if ($email&&$password&&$name&&$existeFile) {
 			if (password_verify($password,$usuario['password'])) {
-				$infoUsuario=dameInfoUsuarioPorCampo('id',$usuario['id']);
-				if ($infoUsuario['existe']) {
-					if (esUsuarioUnico($email,$_SESSION['usuario']['id'])) {
-						$usuarioModificado=[
-								'nombre'=>$nombre,
-								'email'=>$email,
-								'password'=>password_hash($password,PASSWORD_DEFAULT),
-								'id'=>$_SESSION['usuario']['id'],
-								'imagen'=>guardarArchivoSubido('imagen')
-						];
-						modificarUsuario($usuarioModificado,$infoUsuario['posicion']);//guardar en json
-						$_SESSION['usuario']=$usuarioModificado;//guardar en sesión
+				if ($infoUsuario) {
+					if ($infoUsuario->esMailUnico($email,$_SESSION['usuario']['id'])) {
+						$arrayAGuardar=$_POST; //prepara el el array a guardar
+						$user=new Usuario($arrayAGuardar); //crea objeto usuario
+						$user->setImage(guardarArchivoSubido('image'));// guarda archivo y carga la dir en objeto usuario
+						$user->setPassword($password);
+						$user->setUserName($_SESSION['usuario']['userName']);
+						$user->setId($_SESSION['usuario']['id']);
+						$user->save(); //guarda usuario
+						$_SESSION['usuario'] = (array)$user;//guardar en sesión
 					}else {
 						$error=true;
 						$errorMailExiste=true;
@@ -79,25 +80,24 @@
 				<?php if (existeParametro('usuario',$_SESSION)): ?>
 					<div class="usuarioHeader">
 						<a href="perfil.php">
-							<label>
-								<img src="<?= $usuario['imagen']?>" > <br> <?= $usuario['usuario']?>
-							</label>
+						<label>
+							<img src="<?= $usuario['image']?>" > <br> <?= $usuario['userName']?>
+						</label>
 						</a>
 					</div>
-					<?php else: ?>
-						<a href="login.php"><button id="login-btn">Ingresar</button></a>
+				<?php else: ?>
+					<a href="login.php"><button id="login-btn">Ingresar</button></a>
 				<?php endif; ?>
-
 			</header>
 <!-- HEADER END -->
 
 <div class="containerForm registro">
 
 	 <form method="post" enctype="multipart/form-data">
-	 
+
 	 <h1>Modificar datos</h1>
 
-		<?php if($error && array_key_exists('existe', $infoUsuario) && !$infoUsuario['existe']): ?>
+		<?php if($error && !$infoUsuario): ?>
 			<p>
 				<span>Error: el usuario no existe en la base de datos</span>
 			</p>
@@ -110,8 +110,8 @@
 
 		<?php endif; ?>
 
-		<input type="text" name="nombre" placeholder="Usuario" value="<?= $nombre?>" alt="Usuario">
-		<?php if($error && !$nombre):?>
+		<input type="text" name="name" placeholder="Nombre" value="<?= $name?>" alt="Usuario">
+		<?php if($error && !$name):?>
 			<span>Ingrese su nombre</span>
 		<?php endif; ?>
 
@@ -124,9 +124,12 @@
 		<?php if($error && !$password):?>
 			<span>Ingrese su password</span>
 		<?php endif; ?>
+		<?php if ($error && $passwordError): ?>
+			<span>Password erronea. Reingrese</span>
+		<?php endif; ?>
 
-		<label for="imagen" >Insertar imagen:</label>
-		<input type="file" name="imagen">
+		<label for="image" >Insertar imagen:</label>
+		<input type="file" name="image">
 		<?php if($error && !$existeFile):?>
 			<span>Cambie su imagen</span>
 		<?php endif; ?>

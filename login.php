@@ -1,5 +1,6 @@
 <?php
 	include('funciones.php');
+	require './classes/Usuario.php';
 
 	session_start();
 
@@ -19,10 +20,10 @@
 
 	if (existeParametro('submit', $_POST)) {
 		if($email && $password) {
-			$infoUsuario = dameInfoUsuarioPorCampo('email',$email);
-			if ($infoUsuario['existe']) {
-				if (password_verify($password, $infoUsuario['usuario']['password'] )) {
-					$_SESSION['usuario'] = $infoUsuario['usuario'];
+			$infoUsuario = Usuario::find('email',$email);
+			if ($infoUsuario) {
+				if (password_verify($password,$infoUsuario->password)) {
+					$_SESSION['usuario'] = (array)$infoUsuario;
 					if ($recordarme) {
 						setcookie("email",$email);
 						setcookie("password",$password);
@@ -76,7 +77,7 @@
 					<?php if($error && !$email):?>
 						<input style="background-color:red" type="email" name="email" placeholder="Ingrese su email" value="<?= $email ?>">
 					<?php else: ?>
-						<?php if($error && array_key_exists('existe', $infoUsuario) && !$infoUsuario['existe']): ?>
+						<?php if($error && !$infoUsuario): ?>
 							<input style="background-color:red" type="email" name="email" placeholder="Email incorrecto. Reingrese">
 						<?php else: ?>
 							<?php if (isset($_COOKIE["email"])): ?>

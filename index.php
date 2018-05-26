@@ -28,13 +28,13 @@ include('funciones.php');
 			<div class="logo">LOGO</div>
 			<?php if (existeParametro('usuario',$_SESSION)): ?>
 				<?php $usuario = $_SESSION['usuario']; ?>
-				<div class="usuarioHeader">
-					<a href="perfil.php">
-						<label>
-							<img src="<?= $usuario['imagen']?>" > <br> <?= $usuario['usuario']?>
-						</label>
-					</a>
-				</div>
+        <div class="usuarioHeader">
+          <a href="perfil.php">
+          <label>
+            <img src="<?= $usuario['image']?>" > <br> <?= $usuario['userName']?>
+          </label>
+          </a>
+        </div>
 				<?php else: ?>
 					<a href="login.php"><button id="login-btn">Ingresar</button></a>
 			<?php endif; ?>

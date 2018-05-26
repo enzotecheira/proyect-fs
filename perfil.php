@@ -11,6 +11,7 @@
 
 	$usuario = $_SESSION['usuario'];
 
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -37,7 +38,7 @@
 					<div class="usuarioHeader">
 						<a href="perfil.php">
 						<label>
-							<img src="<?= $usuario['imagen']?>" > <br> <?= $usuario['usuario']?>
+							<img src="<?= $usuario['image']?>" > <br> <?= $usuario['userName']?>
 						</label>
 						</a>
 					</div>
@@ -52,13 +53,13 @@
 			<div class="containerForm login">
 				<form method="post" enctype="multipart/form-data">
 					<h1>Bienvenido</h1>
-					<p><?= $usuario['nombre']?></p>
+					<p><?= $usuario['name']?></p>
 					<br>
-					<p>Usuario: <?= $usuario['usuario']?></p>
+					<p>Usuario: <?= $usuario['userName']?></p>
 					<p>Email: <?= $usuario['email']?></p>
 					<br>
 					<p>
-						<img src="<?= $usuario['imagen']?>" style="max-width: 200px;">
+						<img src="<?= $usuario['image']?>" style="max-width: 200px;">
 					</p>
 					<br>
 					<p class="recordarme">

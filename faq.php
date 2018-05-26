@@ -27,12 +27,12 @@ include('funciones.php');
     			<?php if (existeParametro('usuario',$_SESSION)): ?>
     				<?php $usuario = $_SESSION['usuario']; ?>
             <div class="usuarioHeader">
-    					<a href="perfil.php">
-    						<label>
-    							<img src="<?= $usuario['imagen']?>" > <?= $usuario['usuario']?>
-    						</label>
-    					</a>
-    				</div>
+  						<a href="perfil.php">
+  						<label>
+  							<img src="<?= $usuario['image']?>" > <br> <?= $usuario['userName']?>
+  						</label>
+  						</a>
+  					</div>
       			<?php else: ?>
       				<a href="login.php"><button id="login-btn">Ingresar</button></a>
       		<?php endif; ?>

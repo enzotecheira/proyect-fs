@@ -1,6 +1,9 @@
-CREATE SCHEMA `avecino` ;
-CREATE TABLE `avecino`.`usuarios` (
-  `idusuarios` INT NOT NULL AUTO_INCREMENT,
+DROP DATABASE IF EXISTS avecino;
+CREATE SCHEMA avecino ;
+USE avecino;
+DROP TABLE IF EXISTS `usuarios`;
+CREATE TABLE `usuarios` (
+  `id` INT NOT NULL AUTO_INCREMENT,
   `userName` VARCHAR(45) NULL,
   `email` VARCHAR(45) NULL,
   `password` VARCHAR(45) NULL,

@@ -1,10 +1,10 @@
 <?php
 
-require_once './classes/DBFactory.php';
-require_once './classes/MySQLDB.php';
-require_once './classes/JsonDB.php';
+require_once 'DBFactory.php';
+require_once 'MySQLDB.php';
+require_once 'JsonDB.php';
 
-	DBFactory::$db_type = 'MySQLDB'; //ELEGIR DB MySQLDB JsonDB
+	DBFactory::$db_type = 'JsonDB'; //ELEGIR DB MySQLDB JsonDB
 /**
  *
  */

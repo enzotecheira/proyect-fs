@@ -34,6 +34,10 @@ class Usuario extends Model {
    {
      $this->userName=$userName;
    }
+   public function getUserName()
+   {
+     return $this->userName;
+   }
 }
 
  ?>

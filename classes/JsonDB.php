@@ -3,9 +3,9 @@
 class JsonDB {
 
     public function find($row, $value, $table, $class){
-      $registros = json_decode(file_get_contents('usuarios.json'),true);
+      $registros = json_decode(file_get_contents($table.'.json'),true);
   		if (is_null($registros)) {
-  			$registros = ['usuarios' => []];
+  			$registros = [$table => []];
   		}
       foreach ($registros[$table] as $indice => $registro) {
   			if ($registro[$row] == $value) {

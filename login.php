@@ -21,6 +21,7 @@
 	if (existeParametro('submit', $_POST)) {
 		if($email && $password) {
 			$infoUsuario = Usuario::find('email',$email);
+
 			if ($infoUsuario) {
 				if (password_verify($password,$infoUsuario->password)) {
 					$_SESSION['usuario'] = (array)$infoUsuario;

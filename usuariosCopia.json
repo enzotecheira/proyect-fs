@@ -71,22 +71,6 @@
             "name": "Lautaro prime",
             "image": ".\/archivos\/imagen_1527318329.png",
             "id": 9
-        },
-        {
-            "userName": "pruebaaaaaaaa",
-            "email": "a@a.com",
-            "password": "123",
-            "name": "pepe",
-            "image": "dede",
-            "id": 10
-        },
-        {
-            "userName": "asdasdasd",
-            "email": "1@1.com",
-            "password": "$2y$10$fGaNXVSpyIeGP052MN4cXOe.FHssy9TnmZWQ0YbDxd1RFN9d1arRy",
-            "name": "user11",
-            "image": ".\/archivos\/imagen_1527398445.png",
-            "id": 11
         }
     ]
 }

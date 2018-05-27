@@ -27,6 +27,7 @@ class MySQLDB {
       $stmt->bindValue(":$column",$model->$column);
     }
     $stmt->execute();
+
   }
   private function insert($table, $model)
   {
@@ -38,7 +39,7 @@ class MySQLDB {
   {
     $set='';
     foreach ($model->fillable as $column) {
-      $set .= "$column=:$column,";
+      $set .= $column."=:".$column.",";
     }
     $set = trim($set, ",");
     return "UPDATE ".$table." SET $set WHERE id = " .$model->id;

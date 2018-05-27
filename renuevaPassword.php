@@ -1,5 +1,6 @@
 <?php
 	include('funciones.php');
+	require './classes/Usuario.php';
 
 	session_start();
 
@@ -13,23 +14,25 @@
 	$password = dameValorDeParametro('password',$_POST);
 	$password2 = dameValorDeParametro('password2',$_POST);
 	$codigoIngresadoPorUsuario= dameValorDeParametro('codigoIngresadoPorUsuario',$_POST);
+	echo 'El codigo a ingresar es: '.($codigo);
 
-
-	$infoUsuario = [];
+	$infoUsuario;
 
 	$error = false;
 	$errorReingresoPassword=false;
 
 	if (existeParametro('submit', $_POST)) {
 		if($email) {
-			$infoUsuario = dameInfoUsuarioPorCampo('email',$email);
-			if ($infoUsuario['existe']) {
+			$infoUsuario = Usuario::find('email',$email);
+			if ($infoUsuario) {
 				if (!$codigo) {
 					mail($email, 'Codigo', $codigo);
 				}
 				if ($codigo!=null && $password!==null && $password2!=null && $codigoIngresadoPorUsuario==$codigo && $password==$password2) {
-					$nuevaPassword=password_hash($password,PASSWORD_DEFAULT);
-					modificarCampoUsuario($nuevaPassword,$infoUsuario['posicion'],'password');
+					// $nuevaPassword=password_hash($password,PASSWORD_DEFAULT);
+					// modificarCampoUsuario($nuevaPassword,$infoUsuario['posicion'],'password');
+					$infoUsuario->setPassword($password);
+					$infoUsuario->save();
 					header("Location: login.php");
 					exit;
 				}else {
@@ -82,7 +85,7 @@
 							<?php if($error && !$email):?>
 								<input style="background-color:red" type="email" name="email" placeholder="Ingrese su email" value="<?= $email ?>">
 								<?php else: ?>
-									<?php if($error && array_key_exists('existe', $infoUsuario) && !$infoUsuario['existe']): ?>
+									<?php if($error && !$infoUsuario): ?>
 										<input style="background-color:red" type="email" name="email" placeholder="Email incorrecto. Reingrese">
 									<?php else: ?>
 										<?php if ($email&&!$codigoIngresadoPorUsuario): ?>
@@ -95,6 +98,7 @@
 													<input type="hidden" name="codigo" value="<?=$codigo?>">
 													<input type="hidden" name="codigoIngresadoPorUsuario" value="<?=$codigoIngresadoPorUsuario?>">
 													<?php else: ?>
+														<span>Código incorrecto, Reingrese mail</span>
 														<input type="email" name="email" placeholder="Email">
 														<input type="hidden" name="codigo" value="<?=$codigo?>">
 												<?php endif; ?>
